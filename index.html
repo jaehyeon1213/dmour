@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>디무르 | 연애·재회·이별 상담 안내</title>
-<meta name="description" content="혼자 견디기 힘든 연애 고민, 디무르가 함께 정리해 드립니다. 카톡·전화 상담 안내 및 예약 페이지.">
+<title>디무르 | 연애·재회·이별 상담</title>
+<meta name="description" content="괜찮은 척은 여기서 내려놓으세요. 연애·재회·이별, 판단 없이 끝까지 듣고 다음 한 걸음을 함께 찾는 디무르 심리상담.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+KR:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -27,6 +27,8 @@
     --serif-kr: 'Noto Serif KR', serif;
     --sans: 'Pretendard Variable', 'Noto Sans KR', sans-serif;
     --accent-grad: linear-gradient(135deg, #cfb180, #efddb6 55%, #cfb180);
+    --border-grad: linear-gradient(135deg, rgba(216,186,126,0.85), rgba(183,164,236,0.45) 55%, rgba(216,186,126,0.65));
+    --border-grad-soft: linear-gradient(160deg, rgba(183,164,236,0.4), rgba(56,44,88,0.6) 45%, rgba(216,186,126,0.28));
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -42,6 +44,13 @@
   .wrap { max-width: 480px; margin: 0 auto; padding: 0 26px; }
   section { padding: 68px 0; }
   h1, h2, h3 { font-family: var(--serif-kr); font-weight: 500; }
+
+  .grad-text {
+    background: linear-gradient(115deg, #e9d09b, #f6ead0 45%, #d3ae72 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
 
   /* ornamental divider */
   .orn {
@@ -89,7 +98,7 @@
     border-radius: 50%;
     position: relative;
     background: radial-gradient(circle at 35% 32%, #f8eed6, #d8ba7e 72%);
-    box-shadow: 0 0 44px 10px rgba(216,186,126,0.32), 0 0 110px 42px rgba(141,120,208,0.28);
+    box-shadow: 0 0 44px 10px rgba(216,186,126,0.30), 0 0 100px 36px rgba(141,120,208,0.20);
   }
   .hero .moon::after {
     content: ""; position: absolute; inset: -13px;
@@ -110,15 +119,22 @@
     letter-spacing: 0.5em;
     text-indent: 0.5em;
     color: var(--ink-dim);
-    margin-bottom: 26px;
+    margin-bottom: 30px;
+  }
+  .hero .eyebrow {
+    font-size: 12.5px;
+    letter-spacing: 0.24em;
+    text-indent: 0.24em;
+    color: var(--violet);
+    margin-bottom: 16px;
   }
   .hero h1 {
-    font-size: 27px;
-    line-height: 1.68;
+    font-size: 26.5px;
+    line-height: 1.72;
     margin-bottom: 22px;
     font-weight: 500;
   }
-  .hero h1 em { font-style: normal; color: var(--gold-soft); }
+  .hero h1 em { font-style: normal; }
   .hero p { font-size: 15px; color: var(--ink-soft); line-height: 1.95; }
   .hero .tags {
     display: flex; justify-content: center; gap: 8px;
@@ -156,13 +172,18 @@
     color: var(--ink-dim);
     text-align: center;
     margin-bottom: 38px;
+    line-height: 1.85;
   }
 
   /* ---------- empathy checklist ---------- */
-  .empathy { background: var(--bg-soft); border-top: 1px solid var(--card-line-soft); border-bottom: 1px solid var(--card-line-soft); }
+  .empathy {
+    background: linear-gradient(180deg, #191428, #1b1529 50%, #181322);
+    border-top: 1px solid var(--card-line-soft);
+    border-bottom: 1px solid var(--card-line-soft);
+  }
   .check-list { display: flex; flex-direction: column; gap: 12px; }
   .check-item {
-    background: var(--card);
+    background: linear-gradient(150deg, #241c39, #211a34 70%);
     border: 1px solid var(--card-line-soft);
     border-left: 2px solid rgba(216,186,126,0.55);
     border-radius: 4px 14px 14px 4px;
@@ -172,6 +193,7 @@
     display: flex;
     gap: 12px;
     align-items: flex-start;
+    line-height: 1.75;
   }
   .check-item::before {
     content: "✦";
@@ -187,22 +209,19 @@
     font-size: 15.5px;
     line-height: 2;
   }
-  .empathy .closing em { font-style: normal; color: var(--gold-soft); }
+  .empathy .closing em { font-style: normal; }
 
   /* ---------- why ---------- */
   .why-grid { display: flex; flex-direction: column; gap: 15px; }
   .why-card {
-    background: linear-gradient(160deg, #251d3d, #201936 55%);
-    border: 1px solid var(--card-line-soft);
+    border: 1px solid transparent;
+    background:
+      linear-gradient(160deg, #261e3e, #201936 60%) padding-box,
+      var(--border-grad-soft) border-box;
     border-radius: 16px;
     padding: 26px 24px;
     position: relative;
     overflow: hidden;
-  }
-  .why-card::before {
-    content: "";
-    position: absolute; top: 0; left: 24px; right: 24px; height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(183,164,236,0.4), transparent);
   }
   .why-card .num {
     font-family: var(--serif-en);
@@ -212,10 +231,14 @@
     margin-bottom: 10px;
   }
   .why-card h3 { font-size: 17px; margin-bottom: 9px; }
-  .why-card p { font-size: 13.5px; color: var(--ink-soft); }
+  .why-card p { font-size: 13.5px; color: var(--ink-soft); line-height: 1.85; }
 
   /* ---------- pricing ---------- */
-  .pricing { background: var(--bg-soft); border-top: 1px solid var(--card-line-soft); border-bottom: 1px solid var(--card-line-soft); }
+  .pricing {
+    background: linear-gradient(180deg, #181322, #1b1529 40%, #191428);
+    border-top: 1px solid var(--card-line-soft);
+    border-bottom: 1px solid var(--card-line-soft);
+  }
   .price-group-label {
     display: flex; align-items: center; gap: 16px;
     font-family: var(--serif-kr);
@@ -228,21 +251,26 @@
   }
   .price-group-label::before, .price-group-label::after {
     content: ""; width: 36px; height: 1px;
-    background: rgba(183,164,236,0.35);
+    background: linear-gradient(90deg, transparent, rgba(183,164,236,0.5));
   }
+  .price-group-label::after { background: linear-gradient(90deg, rgba(183,164,236,0.5), transparent); }
   .price-group-label:first-of-type { margin-top: 0; }
   .price-card {
-    background: var(--card);
-    border: 1px solid var(--card-line-soft);
+    background:
+      linear-gradient(155deg, #231b38, #211a34 65%) padding-box,
+      linear-gradient(160deg, rgba(56,44,88,0.9), rgba(44,35,71,0.5) 60%, rgba(56,44,88,0.7)) border-box;
+    border: 1px solid transparent;
     border-radius: 18px;
     padding: 26px 24px;
     margin-bottom: 14px;
     position: relative;
   }
   .price-card.best {
-    border: 1px solid rgba(216,186,126,0.75);
-    background: linear-gradient(165deg, #2c2344, #221a36 58%);
-    box-shadow: 0 10px 46px rgba(141,120,208,0.18), inset 0 1px 0 rgba(239,221,182,0.14);
+    border: 1px solid transparent;
+    background:
+      linear-gradient(165deg, #2d2447, #221a36 62%) padding-box,
+      var(--border-grad) border-box;
+    box-shadow: 0 10px 46px rgba(141,120,208,0.18), inset 0 1px 0 rgba(239,221,182,0.12);
   }
   .badge {
     position: absolute;
@@ -267,16 +295,19 @@
     font-family: var(--serif-en);
     font-size: 24px;
     font-weight: 600;
-    color: var(--gold-soft);
     white-space: nowrap;
     letter-spacing: 0.02em;
+    background: linear-gradient(115deg, #e9d09b, #f6ead0 50%, #d3ae72);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
   .price-head .price small {
     font-family: var(--sans);
     font-size: 12px;
-    color: var(--ink-dim);
     font-weight: 300;
     margin-left: 2px;
+    -webkit-text-fill-color: var(--ink-dim);
   }
   .price-card .desc { font-size: 13px; color: var(--ink-dim); margin-bottom: 14px; }
   .price-card ul { list-style: none; }
@@ -286,6 +317,7 @@
     padding-left: 18px;
     position: relative;
     margin-bottom: 6px;
+    line-height: 1.75;
   }
   .price-card li::before {
     content: "✦";
@@ -296,7 +328,7 @@
   .price-card .bonus {
     margin-top: 15px;
     padding: 13px 15px;
-    background: rgba(216,186,126,0.07);
+    background: linear-gradient(135deg, rgba(216,186,126,0.10), rgba(183,164,236,0.06));
     border: 1px dashed rgba(216,186,126,0.42);
     border-radius: 12px;
     font-size: 12.5px;
@@ -305,12 +337,14 @@
   }
   .event-banner {
     margin-top: 26px;
-    background: linear-gradient(135deg, rgba(141,120,208,0.16), rgba(216,186,126,0.10));
-    border: 1px solid rgba(183,164,236,0.45);
+    background:
+      linear-gradient(135deg, rgba(141,120,208,0.16), rgba(216,186,126,0.10)) padding-box,
+      linear-gradient(#1e1731, #1e1731) padding-box,
+      linear-gradient(135deg, rgba(183,164,236,0.6), rgba(216,186,126,0.4)) border-box;
+    border: 1px solid transparent;
     border-radius: 16px;
     padding: 22px;
     text-align: center;
-    position: relative;
   }
   .event-banner .ttl {
     font-family: var(--serif-kr);
@@ -319,7 +353,7 @@
     color: var(--gold-soft);
     margin-bottom: 7px;
   }
-  .event-banner p { font-size: 13px; color: var(--ink-soft); }
+  .event-banner p { font-size: 13px; color: var(--ink-soft); line-height: 1.85; }
   .event-banner p b { color: var(--ink); font-weight: 500; }
   .note-line {
     margin-top: 18px;
@@ -331,8 +365,10 @@
 
   /* ---------- addons ---------- */
   .addon-card {
-    background: var(--card);
-    border: 1px solid var(--card-line-soft);
+    background:
+      linear-gradient(155deg, #231b38, #211a34 65%) padding-box,
+      linear-gradient(160deg, rgba(56,44,88,0.9), rgba(44,35,71,0.5) 60%, rgba(56,44,88,0.7)) border-box;
+    border: 1px solid transparent;
     border-radius: 16px;
     padding: 23px 22px;
     margin-bottom: 14px;
@@ -353,17 +389,21 @@
     white-space: nowrap;
   }
   .addon-card .plus small { font-family: var(--sans); font-size: 11.5px; font-weight: 300; color: var(--ink-dim); }
-  .addon-card p { font-size: 13px; color: var(--ink-soft); }
+  .addon-card p { font-size: 13px; color: var(--ink-soft); line-height: 1.85; }
   .addon-note {
     font-size: 13px;
     color: var(--ink-dim);
     text-align: center;
     margin-top: 22px;
-    line-height: 1.85;
+    line-height: 1.95;
   }
 
   /* ---------- process ---------- */
-  .process { background: var(--bg-soft); border-top: 1px solid var(--card-line-soft); border-bottom: 1px solid var(--card-line-soft); }
+  .process {
+    background: linear-gradient(180deg, #191428, #1b1529 50%, #181322);
+    border-top: 1px solid var(--card-line-soft);
+    border-bottom: 1px solid var(--card-line-soft);
+  }
   .step { display: flex; gap: 18px; position: relative; padding-bottom: 32px; }
   .step:last-child { padding-bottom: 0; }
   .step::before {
@@ -389,7 +429,7 @@
     z-index: 1;
   }
   .step h3 { font-size: 15.5px; margin-bottom: 5px; padding-top: 4px; }
-  .step p { font-size: 13.5px; color: var(--ink-soft); }
+  .step p { font-size: 13.5px; color: var(--ink-soft); line-height: 1.8; }
   .step p small { color: var(--ink-dim); font-size: 12.5px; }
 
   /* ---------- policy ---------- */
@@ -407,7 +447,7 @@
 
   /* ---------- faq ---------- */
   details {
-    background: var(--card);
+    background: linear-gradient(155deg, #231b38, #211a34 65%);
     border: 1px solid var(--card-line-soft);
     border-radius: 14px;
     margin-bottom: 12px;
@@ -428,7 +468,7 @@
   summary::-webkit-details-marker { display: none; }
   summary::after { content: "＋"; color: var(--gold); flex-shrink: 0; font-size: 14px; }
   details[open] summary::after { content: "－"; }
-  details .a { padding: 0 20px 18px; font-size: 13.5px; color: var(--ink-soft); }
+  details .a { padding: 0 20px 18px; font-size: 13.5px; color: var(--ink-soft); line-height: 1.85; }
 
   /* ---------- cta ---------- */
   .cta {
@@ -437,8 +477,8 @@
     background: radial-gradient(ellipse 85% 65% at 50% 115%, rgba(141,120,208,0.26), transparent);
   }
   .cta h2 { font-size: 21.5px; line-height: 1.72; margin-bottom: 13px; }
-  .cta h2 em { font-style: normal; color: var(--gold-soft); }
-  .cta > .wrap > p { font-size: 14px; color: var(--ink-soft); margin-bottom: 34px; }
+  .cta h2 em { font-style: normal; }
+  .cta > .wrap > p { font-size: 14px; color: var(--ink-soft); margin-bottom: 34px; line-height: 1.9; }
   .btn {
     display: block;
     text-decoration: none;
@@ -456,7 +496,13 @@
     font-weight: 700;
     box-shadow: 0 8px 34px rgba(216,186,126,0.28);
   }
-  .btn-ghost { border: 1px solid rgba(183,164,236,0.4); color: var(--ink-soft); }
+  .btn-ghost {
+    border: 1px solid transparent;
+    background:
+      linear-gradient(#14101f, #14101f) padding-box,
+      linear-gradient(135deg, rgba(183,164,236,0.55), rgba(216,186,126,0.35)) border-box;
+    color: var(--ink-soft);
+  }
   .privacy { margin-top: 30px; font-size: 12px; color: var(--ink-dim); line-height: 1.9; }
   footer {
     text-align: center;
@@ -477,10 +523,12 @@
     <div class="moon" aria-hidden="true"></div>
     <div class="brand">DMOUR</div>
     <div class="brand-kr">디 무 르</div>
-    <h1>혼자 버티던 그 마음,<br>이제 <em>같이 정리해요</em></h1>
-    <p>연애 · 재회 · 이별, 그리고 말 못 할 고민까지.<br>
-    감정에 휩쓸리지 않는 객관적인 시선으로<br>
-    지금 당신에게 필요한 답을 찾아드립니다.</p>
+    <div class="eyebrow">연애 · 재회 · 이별 심리상담</div>
+    <h1>보내지 못한 연락,<br>삼켜버린 말들<br><em class="grad-text">여기 다 풀어놓으세요</em></h1>
+    <p>누구에게도 하지 못한 이야기가 있죠.<br>
+    판단하지 않고 끝까지 듣겠습니다.<br>
+    그리고 지금 당신에게 필요한<br>
+    가장 현실적인 다음 한 걸음을 함께 찾을게요.</p>
     <div class="tags">
       <span># 재회 전략</span>
       <span># 이별 극복</span>
@@ -494,16 +542,16 @@
 <section class="empathy">
   <div class="wrap">
     <div class="sec-label">FOR YOU</div>
-    <h2 class="sec-title">이런 마음이라면,<br>디무르를 찾아주세요</h2>
-    <p class="sec-sub">하나라도 해당된다면 상담이 도움이 됩니다.</p>
+    <h2 class="sec-title">이런 밤을<br>보내고 있다면</h2>
+    <p class="sec-sub">하나라도 내 얘기 같다면, 잘 찾아오셨어요.</p>
     <div class="check-list">
-      <div class="check-item">헤어진 그 사람과 다시 시작하고 싶은데, 어떻게 다가가야 할지 모르겠어요.</div>
-      <div class="check-item">상대방의 말과 행동이 무슨 의미인지 밤새 곱씹게 돼요.</div>
-      <div class="check-item">주변에 말해봐도 "잊어버려"라는 말뿐, 진짜 조언이 필요해요.</div>
-      <div class="check-item">이별 후 무너진 자존감 때문에 일상이 흔들리고 있어요.</div>
-      <div class="check-item">같은 연애 패턴을 반복하는 이유를 알고 싶어요.</div>
+      <div class="check-item">"자니?" 한 마디를 썼다 지웠다 하다가, 새벽이 다 갔어요.</div>
+      <div class="check-item">읽고 답이 없는 카톡을 보면서도, 어떻게든 이유를 만들어 이해하려고 해요.</div>
+      <div class="check-item">친구들은 "잊어, 네가 아깝다"라는데— 그게 안 되니까 힘든 거잖아요.</div>
+      <div class="check-item">그 사람이 마지막에 했던 말이 무슨 뜻이었는지, 아직도 생각해요.</div>
+      <div class="check-item">비슷한 사람, 비슷한 이별. 왜 늘 나만 이럴까 싶어요.</div>
     </div>
-    <p class="closing">위로만으로는 바뀌지 않아요.<br><em>정확한 진단과 구체적인 다음 행동</em>이 필요합니다.</p>
+    <p class="closing">억지로 잊는 건 답이 아니에요.<br>마음이 왜 이렇게 됐는지 알게 되면,<br><em class="grad-text">그때부터 조금씩 덜 아파집니다.</em></p>
   </div>
 </section>
 
@@ -511,23 +559,23 @@
 <section>
   <div class="wrap">
     <div class="sec-label">WHY DMOUR</div>
-    <h2 class="sec-title">디무르 상담이 다른 이유</h2>
-    <p class="sec-sub">듣기 좋은 말 대신, 상황을 바꾸는 상담을 합니다.</p>
+    <h2 class="sec-title">디무르가 상담하는 방식</h2>
+    <p class="sec-sub">위로만 받고 싶었다면,<br>여기까지 오지 않으셨을 거예요.</p>
     <div class="why-grid">
       <div class="why-card">
         <div class="num">ONE</div>
-        <h3>감정이 아닌, 상황을 봅니다</h3>
-        <p>내 편에서 위로만 하는 상담이 아니라, 제3자의 시선으로 관계를 객관적으로 진단합니다. 그래야 정확한 답이 나옵니다.</p>
+        <h3>듣기 좋은 말은 하지 않습니다</h3>
+        <p>"괜찮아질 거야"는 위로가 아니라 미룸이에요. 관계가 왜 여기까지 왔는지, 제3자의 눈으로 정확하게 짚어드립니다. 아픈 이야기라도, 필요한 이야기라면 합니다.</p>
       </div>
       <div class="why-card">
         <div class="num">TWO</div>
-        <h3>"그래서 뭘 해야 하는지"까지</h3>
-        <p>진단에서 끝나지 않습니다. 오늘 보낼 연락 한 줄부터 앞으로의 단계별 행동 지침까지, 실행 가능한 가이드를 드립니다.</p>
+        <h3>상담이 끝나면, 할 일이 생깁니다</h3>
+        <p>감정 정리로 끝나지 않아요. 오늘 보낼 답장의 온도부터 다시 마주할 그날까지 — 당신의 상황에 맞춘 구체적인 행동 순서를 손에 쥐여드립니다.</p>
       </div>
       <div class="why-card">
         <div class="num">THREE</div>
-        <h3>상담이 끝나도 곁에 있습니다</h3>
-        <p>50분 상담은 핵심 요약본과 7일 이내 질문권으로 이어집니다. 상담 이후 흔들리는 순간까지 함께합니다.</p>
+        <h3>혼자 남겨두지 않습니다</h3>
+        <p>50분 상담이 끝나면 핵심 정리본을 카톡으로 보내드려요. 그리고 7일 안에 흔들리는 순간이 오면, 한 번 더 물어보실 수 있습니다. 상담은 끝나도 방향은 남도록.</p>
       </div>
     </div>
   </div>
@@ -538,7 +586,7 @@
   <div class="wrap">
     <div class="sec-label">MENU</div>
     <h2 class="sec-title">상담 안내</h2>
-    <p class="sec-sub">고민의 깊이에 맞는 상담을 선택해 주세요.</p>
+    <p class="sec-sub">지금 필요한 깊이만큼 선택하세요.<br>어떤 상담이 맞을지 고민되면 DM으로 물어보셔도 돼요.</p>
 
     <div class="price-group-label">카카오톡 상담</div>
 
@@ -547,10 +595,10 @@
         <h3>카톡 1문 1답</h3>
         <div class="price">10,000<small>원</small></div>
       </div>
-      <p class="desc">답이 필요한 질문 하나, 결론만 짧고 명확하게.</p>
+      <p class="desc">머릿속을 떠나지 않는 질문 하나, 결론부터 드립니다.</p>
       <ul>
-        <li>질문 1개 + 핵심 결론 답변</li>
-        <li>"연락해도 될까요?" 같은 즉답형 고민에 추천</li>
+        <li>"지금 연락해도 될까요?" "이 말, 무슨 뜻일까요?"</li>
+        <li>망설임을 끊어내는 명확한 결론 한 줄</li>
       </ul>
     </div>
 
@@ -559,10 +607,10 @@
         <h3>카톡 심층 상담</h3>
         <div class="price">25,000<small>원</small></div>
       </div>
-      <p class="desc">사연 전체를 읽고, 충분히 대화하며 정리합니다.</p>
+      <p class="desc">사연을 처음부터 끝까지 읽고, 글로 차근차근 정리합니다.</p>
       <ul>
         <li>사연 접수 → 상세 답변 → 추가 질문 → 답변</li>
-        <li>글로 정리하며 차분히 상담받고 싶은 분께 추천</li>
+        <li>말보다 글이 편한 분, 답변을 두고두고 읽고 싶은 분께</li>
       </ul>
     </div>
 
@@ -573,11 +621,11 @@
         <h3>전화 30분</h3>
         <div class="price">50,000<small>원</small></div>
       </div>
-      <p class="desc">하나의 고민을 빠르고 명확하게.</p>
+      <p class="desc">하나의 고민을 집중해서, 명확하게.</p>
       <ul>
-        <li>가벼운 고민 정리</li>
-        <li>상황에 대한 객관적 진단</li>
-        <li>바로 실행할 행동 가이드 제시</li>
+        <li>지금 상황에 대한 객관적인 진단</li>
+        <li>오늘부터 할 수 있는 행동 가이드</li>
+        <li>답이 필요한 고민이 뚜렷할 때 추천</li>
       </ul>
     </div>
 
@@ -587,14 +635,14 @@
         <h3>전화 50분</h3>
         <div class="price">70,000<small>원</small></div>
       </div>
-      <p class="desc">관계의 뿌리부터 회복까지, 깊이 있는 상담.</p>
+      <p class="desc">이별의 원인부터 자존감 회복까지, 가장 깊은 상담.</p>
       <ul>
-        <li>전체 연애 패턴 · 근본 원인 분석</li>
-        <li>단계별 행동 지침 안내</li>
-        <li>무너진 자존감 회복 케어</li>
+        <li>반복되는 연애 패턴, 그 뿌리부터 분석</li>
+        <li>무엇을 · 언제 · 어떻게 — 단계별 행동 지침</li>
+        <li>무너진 자존감을 다시 세우는 회복 케어</li>
       </ul>
       <div class="bonus">
-        ✦ 특별 혜택 — 상담 핵심 요약본 카톡 전송 + 7일 이내 추가 질문권 1회
+        ✦ 특별 혜택 — 상담 핵심 정리본 카톡 전송 + 7일 이내 추가 질문권 1회
       </div>
     </div>
 
@@ -603,19 +651,19 @@
         <h3>전화 60분</h3>
         <div class="price">80,000<small>원</small></div>
       </div>
-      <p class="desc">복잡하게 얽힌 상황을 여유 있게 풀어냅니다.</p>
+      <p class="desc">얽힌 이야기가 많다면, 시간에 쫓기지 않고.</p>
       <ul>
-        <li>50분 상담 구성 + 여유 있는 심층 대화</li>
-        <li>사연이 길거나 고민이 여러 갈래인 분께 추천</li>
+        <li>50분 상담 구성 그대로, 더 여유 있게</li>
+        <li>사연이 길거나 고민이 여러 갈래일 때</li>
       </ul>
     </div>
 
     <div class="event-banner">
-      <div class="ttl">💌 후기 이벤트 진행 중</div>
-      <p>전화 상담 후 100~300자 후기를 남겨주시면<br><b>상담 금액의 50%를 환불</b>해 드립니다. <small>(기간 한정)</small></p>
+      <div class="ttl">후기 남기고, 절반 돌려받기</div>
+      <p>전화 상담 후 100~300자 후기를 남겨주시면<br><b>상담 금액의 50%를 환불</b>해 드려요. (기간 한정)</p>
     </div>
 
-    <p class="note-line">⏱ 상담 중 대화가 더 필요하신 경우,<br>10분 초과 시 10,000원의 추가 비용이 발생합니다.</p>
+    <p class="note-line">상담 중 이야기가 더 필요하시면 연장할 수 있어요.<br>10분 초과 시 10,000원의 추가 비용이 발생합니다.</p>
   </div>
 </section>
 
@@ -624,25 +672,25 @@
   <div class="wrap">
     <div class="sec-label">ADD-ON</div>
     <h2 class="sec-title">추가 선택 옵션</h2>
-    <p class="sec-sub">더 깊은 분석, 더 급한 마음을 위한 선택지입니다.</p>
+    <p class="sec-sub">더 깊은 분석이 필요하거나, 마음이 급한 날을 위해.</p>
 
     <div class="addon-card">
       <div class="head">
-        <h3>🌙 심야 · 긴급 상담</h3>
+        <h3>심야 · 긴급 상담</h3>
         <div class="plus">+20,000<small>원</small></div>
       </div>
-      <p>밤 10시 ~ 새벽 2시, 불안해서 잠이 오지 않는 밤. 우선적으로 일정을 배정해 드립니다. (스케줄 사전 협의 필수)</p>
+      <p>새벽의 감정은 낮보다 크게 다가오죠. 밤 10시부터 새벽 2시, 불안이 잠을 이기는 밤에 우선적으로 일정을 배정해 드립니다. (사전 협의 필수)</p>
     </div>
 
     <div class="addon-card">
       <div class="head">
-        <h3>📱 카톡 대화 심층 분석</h3>
+        <h3>카톡 대화 심층 분석</h3>
         <div class="plus">+10,000<small>원</small></div>
       </div>
-      <p>상대방과 나눈 카톡 캡처본(최대 10장)을 상담 전 미리 분석합니다. 텍스트 속에 숨은 상대방의 진짜 심리를 읽어드립니다.</p>
+      <p>두 분의 대화 캡처(최대 10장)를 상담 전에 미리 읽고 들어갑니다. 문장 사이에 숨어 있는 상대방의 온도와 진짜 심리를 짚어드려요.</p>
     </div>
 
-    <p class="addon-note">연애가 아닌 다른 고민도 상담 가능합니다.<br>누구에게도 하기 힘든 이야기, 편하게 꺼내주세요. (가격 동일)</p>
+    <p class="addon-note">연애가 아니어도 괜찮아요.<br>가족, 친구, 나 자신에 대한 고민 — 누구에게도 꺼내기 힘들었던<br>이야기라면 무엇이든, 같은 가격으로 들어드립니다.</p>
   </div>
 </section>
 
@@ -651,34 +699,34 @@
   <div class="wrap">
     <div class="sec-label">HOW TO</div>
     <h2 class="sec-title">상담 예약 과정</h2>
-    <p class="sec-sub">신청부터 상담까지, 네 단계면 충분합니다.</p>
+    <p class="sec-sub">복잡하지 않아요. 네 단계면 끝납니다.</p>
 
     <div class="step">
       <div class="dot">1</div>
       <div>
         <h3>상담 신청 폼 작성</h3>
-        <p>원하는 상담 옵션을 선택하고 구글폼을 작성해 주세요.</p>
+        <p>원하는 상담을 고르고, 신청서에 이야기를 적어주세요. 두서없이 적으셔도 괜찮습니다.</p>
       </div>
     </div>
     <div class="step">
       <div class="dot">2</div>
       <div>
         <h3>예약금 입금 <small style="color:var(--gold);">(상담비에서 차감)</small></h3>
-        <p>안내된 계좌로 예약금 10,000원을 입금해 주세요.<br><small>* 입금자명은 신청서와 동일해야 합니다.</small></p>
+        <p>안내된 계좌로 예약금 10,000원을 입금해 주세요.<br><small>* 입금자명은 신청서와 동일해야 확인이 빨라요.</small></p>
       </div>
     </div>
     <div class="step">
       <div class="dot">3</div>
       <div>
         <h3>일정 조율</h3>
-        <p>작성해 주신 내용을 확인한 뒤, 카카오톡 또는 문자로 상담 시간을 조율해 드립니다.</p>
+        <p>신청서를 확인한 뒤, 카카오톡 또는 문자로 편한 시간을 맞춰드립니다.</p>
       </div>
     </div>
     <div class="step">
       <div class="dot">4</div>
       <div>
         <h3>잔금 납부 & 예약 확정</h3>
-        <p>남은 상담비를 납부해 주시면, 확인 후 예약이 최종 확정됩니다.</p>
+        <p>남은 상담비를 납부해 주시면 예약이 확정돼요. 이제 이야기할 준비만 하시면 됩니다.</p>
       </div>
     </div>
   </div>
@@ -689,7 +737,7 @@
   <div class="wrap">
     <div class="sec-label">POLICY</div>
     <h2 class="sec-title">환불 · 일정 변경 규정</h2>
-    <p class="sec-sub">모든 분의 소중한 시간을 지키기 위한 약속입니다.</p>
+    <p class="sec-sub">서로의 시간을 지키기 위한 최소한의 약속이에요.</p>
 
     <table class="policy-table">
       <tr>
@@ -707,7 +755,7 @@
     </table>
     <p class="policy-note">
       * 예약 시간에서 15분이 지날 때까지 연락이 닿지 않으면 노쇼로 간주됩니다.<br>
-      * 원활한 스케줄 운영을 위해 규정은 예외 없이 적용됩니다. 양해 부탁드립니다.
+      * 모든 분과의 약속을 지키기 위해, 규정은 예외 없이 적용됩니다.
     </p>
   </div>
 </section>
@@ -721,19 +769,19 @@
 
     <details>
       <summary>상담 내용은 비밀이 보장되나요?</summary>
-      <div class="a">네, 모든 상담 내용과 개인정보는 철저히 비밀로 지켜지며 상담 외 목적으로 사용되지 않습니다. 마음 놓고 이야기해 주세요.</div>
+      <div class="a">네. 모든 이야기는 상담 밖으로 나가지 않습니다. 개인정보 역시 상담 외의 목적으로는 사용하지 않아요. 마음 놓고 이야기해 주세요.</div>
     </details>
     <details>
-      <summary>카톡 상담은 얼마 만에 답변을 받나요?</summary>
-      <div class="a">사연 접수 후 순차적으로 답변드리며, 상담 진행 시 예상 답변 시간을 미리 안내해 드립니다. 급하신 경우 심야·긴급 옵션을 이용해 주세요.</div>
-    </details>
-    <details>
-      <summary>어떤 고민을 가져가도 되나요?</summary>
-      <div class="a">재회, 이별, 짝사랑, 권태기, 상대방 심리 등 연애 전반은 물론, 누구에게도 말하기 힘든 개인적인 고민도 좋습니다. 사소해 보이는 고민일수록 빨리 푸는 게 좋아요.</div>
+      <summary>무슨 말부터 해야 할지 모르겠어요.</summary>
+      <div class="a">괜찮아요. 신청서의 질문에 답하다 보면 자연스럽게 정리됩니다. 두서없이 적으셔도 제가 맥락을 찾아 읽어요. 정리는 제 몫입니다.</div>
     </details>
     <details>
       <summary>전화 상담이 처음이라 떨려요.</summary>
-      <div class="a">긴장하지 않으셔도 됩니다. 신청서에 적어주신 사연을 미리 꼼꼼히 읽고 준비된 상태로 전화드리기 때문에, 편하게 대화하듯 진행됩니다.</div>
+      <div class="a">적어주신 사연을 미리 꼼꼼히 읽고 준비된 상태로 전화드려요. 처음부터 설명하실 필요 없이, 편하게 대화하듯 시작하시면 됩니다.</div>
+    </details>
+    <details>
+      <summary>카톡 상담은 얼마 만에 답변을 받나요?</summary>
+      <div class="a">접수 순서대로 답변드리며, 신청 시 예상 답변 시간을 미리 안내해 드립니다. 마음이 급한 날에는 심야·긴급 옵션을 이용해 주세요.</div>
     </details>
   </div>
 </section>
@@ -742,8 +790,8 @@
 <section class="cta">
   <div class="wrap">
     <div class="orn"><span>✦</span></div>
-    <h2>고민은 미룰수록<br><em>마음이 더 무거워집니다</em></h2>
-    <p>오늘 밤도 뒤척이고 있다면, 지금 신청해 주세요.</p>
+    <h2>미루는 동안에도<br><em class="grad-text">마음은 계속 닳고 있어요</em></h2>
+    <p>오늘 밤도 그 생각으로 뒤척일 것 같다면,<br>이야기를 들려주세요. 여기서부터 달라집니다.</p>
     <a class="btn btn-primary" href="https://forms.gle/JLru4uYSxo2dRywo8" target="_blank" rel="noopener">상담 신청하기</a>
     <a class="btn btn-ghost" href="https://www.instagram.com/dear_amour__/" target="_blank" rel="noopener">인스타그램 무료 자료 받기</a>
     <p class="privacy">🔒 상담 내용과 개인정보는 철저히 비밀이 보장됩니다.</p>
