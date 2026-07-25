@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>디무르 상담 안내 — A4 이미지 추출용</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+KR:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+  :root {
+    --bg: #14101f;
+    --bg-soft: #1a1529;
+    --card: #221a36;
+    --card-line: #382c58;
+    --card-line-soft: #2c2347;
+    --ink: #f4f1fb;
+    --ink-soft: #c6bcdd;
+    --ink-dim: #8f83af;
+    --violet: #b7a4ec;
+    --violet-deep: #8d78d0;
+    --gold: #d8ba7e;
+    --gold-soft: #efddb6;
+    --serif-en: 'Cormorant Garamond', serif;
+    --serif-kr: 'Noto Serif KR', serif;
+    --sans: 'Pretendard Variable', 'Noto Sans KR', sans-serif;
+    --accent-grad: linear-gradient(135deg, #cfb180, #efddb6 55%, #cfb180);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0b0812;
+    font-family: var(--sans);
+    font-weight: 300;
+    color: var(--ink);
+    line-height: 1.7;
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ═══════ A4 page frame (794 × 1123 px = A4 @96dpi) ═══════ */
+  .page {
+    width: 794px;
+    height: 1123px;
+    margin: 0 auto 32px;
+    position: relative;
+    overflow: hidden;
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    padding: 88px 84px 72px;
+  }
+  .page::before {
+    content: "";
+    position: absolute;
+    inset: 28px;
+    border: 1px solid rgba(216,186,126,0.20);
+    pointer-events: none;
+  }
+  .page::after {
+    content: "";
+    position: absolute;
+    inset: 33px;
+    border: 1px solid rgba(183,164,236,0.10);
+    pointer-events: none;
+  }
+  .page-foot {
+    position: absolute;
+    bottom: 44px; left: 0; right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    font-family: var(--serif-en);
+    font-size: 12px;
+    letter-spacing: 0.34em;
+    text-indent: 0.34em;
+    color: #6a6089;
+  }
+  .page-foot .dot { color: rgba(216,186,126,0.6); font-size: 8px; text-indent: 0; letter-spacing: 0; }
+  .glow-top {
+    position: absolute; top: 0; left: 0; right: 0; height: 420px;
+    background: radial-gradient(ellipse 85% 70% at 50% -18%, rgba(141,120,208,0.20), transparent 70%);
+    pointer-events: none;
+  }
+  .glow-bottom {
+    position: absolute; bottom: 0; left: 0; right: 0; height: 420px;
+    background: radial-gradient(ellipse 85% 70% at 50% 118%, rgba(141,120,208,0.20), transparent);
+    pointer-events: none;
+  }
+  .content { position: relative; flex: 1; display: flex; flex-direction: column; }
+  .content.center { justify-content: center; }
+
+  h1, h2, h3 { font-family: var(--serif-kr); font-weight: 500; }
+
+  .sec-label {
+    font-family: var(--serif-en);
+    font-size: 17px;
+    letter-spacing: 0.52em;
+    text-indent: 0.52em;
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+  .sec-title {
+    font-size: 30px;
+    text-align: center;
+    line-height: 1.58;
+    margin-bottom: 14px;
+  }
+  .sec-sub {
+    font-size: 15.5px;
+    color: var(--ink-dim);
+    text-align: center;
+    margin-bottom: 44px;
+  }
+  .orn {
+    display: flex; align-items: center; justify-content: center;
+    gap: 16px; margin: 0 auto 26px; width: 240px;
+  }
+  .orn::before, .orn::after {
+    content: ""; flex: 1; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(216,186,126,0.55));
+  }
+  .orn::after { background: linear-gradient(90deg, rgba(216,186,126,0.55), transparent); }
+  .orn span { color: var(--gold); font-size: 12px; line-height: 1; }
+
+  /* ═══════ page 1 · cover ═══════ */
+  .cover { text-align: center; }
+  .cover .moon {
+    width: 84px; height: 84px;
+    margin: 0 auto 44px;
+    border-radius: 50%;
+    position: relative;
+    background: radial-gradient(circle at 35% 32%, #f8eed6, #d8ba7e 72%);
+    box-shadow: 0 0 46px 10px rgba(216,186,126,0.26), 0 0 100px 34px rgba(141,120,208,0.16);
+  }
+  .cover .moon::after {
+    content: ""; position: absolute; inset: -18px;
+    border-radius: 50%;
+    border: 1px solid rgba(239,221,182,0.30);
+  }
+  .cover .brand {
+    font-family: var(--serif-en);
+    font-size: 30px;
+    letter-spacing: 0.6em;
+    text-indent: 0.6em;
+    color: var(--gold);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .cover .brand-kr {
+    font-size: 14px;
+    letter-spacing: 0.55em;
+    text-indent: 0.55em;
+    color: var(--ink-dim);
+    margin-bottom: 56px;
+  }
+  .cover h1 { font-size: 41px; line-height: 1.62; margin-bottom: 30px; }
+  .cover h1 em { font-style: normal; color: var(--gold-soft); }
+  .cover .lead { font-size: 17.5px; color: var(--ink-soft); line-height: 2.05; }
+  .cover .tags { display: flex; justify-content: center; gap: 10px; margin-top: 52px; flex-wrap: wrap; }
+  .cover .tags span {
+    font-size: 14px;
+    color: var(--violet);
+    border: 1px solid rgba(183,164,236,0.35);
+    background: rgba(183,164,236,0.06);
+    border-radius: 999px;
+    padding: 7px 20px;
+  }
+  .cover .cat {
+    margin-top: 60px;
+    font-family: var(--serif-kr);
+    font-size: 15px;
+    letter-spacing: 0.4em;
+    text-indent: 0.4em;
+    color: var(--ink-dim);
+  }
+
+  /* ═══════ checklist ═══════ */
+  .check-list { display: flex; flex-direction: column; gap: 16px; }
+  .check-item {
+    background: var(--card);
+    border: 1px solid var(--card-line-soft);
+    border-left: 2px solid rgba(216,186,126,0.55);
+    border-radius: 4px 16px 16px 4px;
+    padding: 22px 26px;
+    font-size: 16.5px;
+    color: var(--ink-soft);
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+  }
+  .check-item::before { content: "✦"; color: var(--gold); font-size: 12px; flex-shrink: 0; margin-top: 7px; }
+  .closing {
+    margin-top: 44px;
+    text-align: center;
+    font-family: var(--serif-kr);
+    font-size: 18.5px;
+    line-height: 2.05;
+  }
+  .closing em { font-style: normal; color: var(--gold-soft); }
+
+  /* ═══════ why ═══════ */
+  .why-grid { display: flex; flex-direction: column; gap: 22px; }
+  .why-card {
+    background: linear-gradient(160deg, #251d3d, #201936 55%);
+    border: 1px solid var(--card-line-soft);
+    border-radius: 18px;
+    padding: 36px 38px;
+    position: relative;
+    overflow: hidden;
+  }
+  .why-card::before {
+    content: "";
+    position: absolute; top: 0; left: 34px; right: 34px; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(183,164,236,0.4), transparent);
+  }
+  .why-card .num {
+    font-family: var(--serif-en);
+    font-size: 15px;
+    color: var(--gold);
+    letter-spacing: 0.38em;
+    margin-bottom: 12px;
+  }
+  .why-card h3 { font-size: 21px; margin-bottom: 11px; }
+  .why-card p { font-size: 15.5px; color: var(--ink-soft); line-height: 1.85; }
+
+  /* ═══════ pricing ═══════ */
+  .price-group-label {
+    display: flex; align-items: center; gap: 20px;
+    font-family: var(--serif-kr);
+    font-size: 16px;
+    letter-spacing: 0.32em;
+    text-indent: 0.32em;
+    color: var(--violet);
+    margin: 40px 0 22px;
+    justify-content: center;
+  }
+  .price-group-label::before, .price-group-label::after {
+    content: ""; width: 52px; height: 1px;
+    background: rgba(183,164,236,0.35);
+  }
+  .price-group-label.first { margin-top: 0; }
+  .price-card {
+    background: var(--card);
+    border: 1px solid var(--card-line-soft);
+    border-radius: 20px;
+    padding: 32px 34px;
+    margin-bottom: 18px;
+    position: relative;
+  }
+  .price-card.best {
+    border: 1px solid rgba(216,186,126,0.75);
+    background: linear-gradient(165deg, #2c2344, #221a36 58%);
+    box-shadow: 0 12px 52px rgba(141,120,208,0.20), inset 0 1px 0 rgba(239,221,182,0.14);
+  }
+  .badge {
+    position: absolute;
+    top: -15px; left: 30px;
+    background: var(--accent-grad);
+    color: #2b2112;
+    font-size: 13.5px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 5px 16px;
+    border-radius: 999px;
+  }
+  .price-head { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; margin-bottom: 5px; }
+  .price-head h3 { font-size: 21px; }
+  .price-head .price {
+    font-family: var(--serif-en);
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--gold-soft);
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+  }
+  .price-head .price small { font-family: var(--sans); font-size: 14px; color: var(--ink-dim); font-weight: 300; margin-left: 2px; }
+  .price-card .desc { font-size: 15px; color: var(--ink-dim); margin-bottom: 16px; }
+  .price-card ul { list-style: none; }
+  .price-card li {
+    font-size: 15.5px;
+    color: var(--ink-soft);
+    padding-left: 22px;
+    position: relative;
+    margin-bottom: 7px;
+  }
+  .price-card li::before {
+    content: "✦";
+    position: absolute; left: 0; top: 2px;
+    color: rgba(216,186,126,0.75);
+    font-size: 10px;
+  }
+  .price-card .bonus {
+    margin-top: 18px;
+    padding: 16px 18px;
+    background: rgba(216,186,126,0.07);
+    border: 1px dashed rgba(216,186,126,0.42);
+    border-radius: 14px;
+    font-size: 14.5px;
+    color: var(--gold-soft);
+    line-height: 1.8;
+  }
+  .event-banner {
+    margin-top: 30px;
+    background: linear-gradient(135deg, rgba(141,120,208,0.16), rgba(216,186,126,0.10));
+    border: 1px solid rgba(183,164,236,0.45);
+    border-radius: 18px;
+    padding: 28px;
+    text-align: center;
+  }
+  .event-banner .ttl {
+    font-family: var(--serif-kr);
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--gold-soft);
+    margin-bottom: 9px;
+  }
+  .event-banner p { font-size: 15.5px; color: var(--ink-soft); }
+  .event-banner p b { color: var(--ink); font-weight: 500; }
+  .note-line {
+    margin-top: 22px;
+    font-size: 14.5px;
+    color: var(--ink-dim);
+    text-align: center;
+    line-height: 1.85;
+  }
+
+  /* ═══════ addons ═══════ */
+  .addon-card {
+    background: var(--card);
+    border: 1px solid var(--card-line-soft);
+    border-radius: 18px;
+    padding: 34px 36px;
+    margin-bottom: 20px;
+  }
+  .addon-card .head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 11px; }
+  .addon-card h3 { font-size: 20px; }
+  .addon-card .plus {
+    font-family: var(--serif-en);
+    color: var(--gold);
+    font-size: 23px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .addon-card .plus small { font-family: var(--sans); font-size: 13.5px; font-weight: 300; color: var(--ink-dim); }
+  .addon-card p { font-size: 15.5px; color: var(--ink-soft); line-height: 1.85; }
+  .addon-note {
+    font-size: 15.5px;
+    color: var(--ink-dim);
+    text-align: center;
+    margin-top: 34px;
+    line-height: 1.95;
+  }
+
+  /* ═══════ process ═══════ */
+  .step { display: flex; gap: 24px; position: relative; padding-bottom: 34px; }
+  .step:last-child { padding-bottom: 0; }
+  .step::before {
+    content: "";
+    position: absolute;
+    left: 20px; top: 46px; bottom: 4px;
+    width: 1px;
+    background: linear-gradient(180deg, rgba(216,186,126,0.4), rgba(183,164,236,0.25));
+  }
+  .step:last-child::before { display: none; }
+  .step .dot {
+    width: 41px; height: 41px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    border: 1px solid rgba(216,186,126,0.7);
+    color: var(--gold);
+    font-family: var(--serif-en);
+    font-size: 18px;
+    font-weight: 500;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--bg);
+    box-shadow: 0 0 18px rgba(216,186,126,0.14);
+    z-index: 1;
+  }
+  .step h3 { font-size: 18.5px; margin-bottom: 5px; padding-top: 6px; }
+  .step p { font-size: 15px; color: var(--ink-soft); }
+  .step p small { color: var(--ink-dim); font-size: 13.5px; }
+
+  /* ═══════ policy ═══════ */
+  .policy-table { width: 100%; border-collapse: collapse; font-size: 15.5px; margin-bottom: 20px; }
+  .policy-table th, .policy-table td {
+    padding: 17px 10px;
+    border-bottom: 1px solid var(--card-line-soft);
+    text-align: left;
+    vertical-align: top;
+  }
+  .policy-table tr:first-child th, .policy-table tr:first-child td { border-top: 1px solid var(--card-line); }
+  .policy-table th { color: var(--ink-soft); font-weight: 400; width: 52%; }
+  .policy-table td { color: var(--gold-soft); }
+  .policy-note { font-size: 14px; color: var(--ink-dim); line-height: 1.95; }
+  .mini-label {
+    font-family: var(--serif-en);
+    font-size: 14px;
+    letter-spacing: 0.42em;
+    text-indent: 0.42em;
+    color: var(--gold);
+    text-align: center;
+    margin: 48px 0 20px;
+    font-weight: 500;
+  }
+
+  /* ═══════ faq ═══════ */
+  .qa {
+    background: var(--card);
+    border: 1px solid var(--card-line-soft);
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin-bottom: 16px;
+  }
+  .qa .q {
+    font-family: var(--serif-kr);
+    font-size: 16.5px;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .qa .q::before { content: "Q. "; color: var(--gold); font-family: var(--serif-en); font-weight: 600; }
+  .qa .a { font-size: 14.5px; color: var(--ink-soft); line-height: 1.8; }
+
+  /* ═══════ cta ═══════ */
+  .cta-block { text-align: center; }
+  .cta-block h2 { font-size: 30px; line-height: 1.7; margin-bottom: 16px; }
+  .cta-block h2 em { font-style: normal; color: var(--gold-soft); }
+  .cta-block .sub { font-size: 16px; color: var(--ink-soft); margin-bottom: 42px; }
+  .cta-pill {
+    display: inline-block;
+    background: var(--accent-grad);
+    color: #2b2112;
+    font-weight: 700;
+    font-size: 17px;
+    border-radius: 999px;
+    padding: 18px 52px;
+    box-shadow: 0 10px 40px rgba(216,186,126,0.28);
+    margin-bottom: 16px;
+  }
+  .cta-sub-pill {
+    display: block;
+    font-size: 14.5px;
+    color: var(--ink-soft);
+    margin-top: 6px;
+  }
+  .privacy { margin-top: 40px; font-size: 13.5px; color: var(--ink-dim); line-height: 1.9; }
+
+  /* compact spacing for dense pages */
+  .tight .sec-sub { margin-bottom: 28px; }
+  .tight .price-card { padding: 26px 30px; margin-bottom: 15px; }
+  .tight .price-card .desc { margin-bottom: 12px; }
+  .tight .price-card li { margin-bottom: 5px; }
+  .tight .price-group-label { margin: 26px 0 16px; }
+  .tight .price-group-label.first { margin-top: 0; }
+  .tight .event-banner { padding: 20px; margin-top: 20px; }
+  .tight .note-line { margin-top: 13px; }
+  #p8 .sec-title { margin-bottom: 34px; }
+  #p8 .qa { padding: 20px 26px; margin-bottom: 13px; }
+  #p8 .cta-block .sub { margin-bottom: 30px; }
+  #p8 .privacy { margin-top: 26px; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ PAGE 1 · 표지 ═══════════ -->
+<div class="page" id="p1">
+  <div class="glow-top"></div>
+  <div class="content center cover">
+    <div class="moon" aria-hidden="true"></div>
+    <div class="brand">DMOUR</div>
+    <div class="brand-kr">디 무 르</div>
+    <h1>혼자 버티던 그 마음,<br>이제 <em>같이 정리해요</em></h1>
+    <p class="lead">연애 · 재회 · 이별, 그리고 말 못 할 고민까지.<br>
+    감정에 휩쓸리지 않는 객관적인 시선으로<br>
+    지금 당신에게 필요한 답을 찾아드립니다.</p>
+    <div class="tags">
+      <span># 재회 전략</span>
+      <span># 이별 극복</span>
+      <span># 상대방 심리</span>
+      <span># 자존감 회복</span>
+    </div>
+    <div class="cat">상담 안내서</div>
+  </div>
+  <div class="page-foot"><span>DMOUR</span><span class="dot">✦</span><span>01</span></div>
+</div>
+
+<!-- ═══════════ PAGE 2 · 공감 ═══════════ -->
+<div class="page" id="p2">
+  <div class="glow-top"></div>
+  <div class="content center">
+    <div class="sec-label">FOR YOU</div>
+    <h2 class="sec-title">이런 마음이라면,<br>디무르를 찾아주세요</h2>
+    <p class="sec-sub">하나라도 해당된다면 상담이 도움이 됩니다.</p>
+    <div class="check-list">
+      <div class="check-item">헤어진 그 사람과 다시 시작하고 싶은데, 어떻게 다가가야 할지 모르겠어요.</div>
+      <div class="check-item">상대방의 말과 행동이 무슨 의미인지 밤새 곱씹게 돼요.</div>
+      <div class="check-item">주변에 말해봐도 "잊어버려"라는 말뿐, 진짜 조언이 필요해요.</div>
+      <div class="check-item">이별 후 무너진 자존감 때문에 일상이 흔들리고 있어요.</div>
+      <div class="check-item">같은 연애 패턴을 반복하는 이유를 알고 싶어요.</div>
+    </div>
+    <p class="closing">위로만으로는 바뀌지 않아요.<br><em>정확한 진단과 구체적인 다음 행동</em>이 필요합니다.</p>
+  </div>
+  <div class="page-foot"><span>DMOUR</span><span class="dot">✦</span><span>02</span></div>
+</div>
+
+<!-- ═══════════ PAGE 3 · 다른 이유 ═══════════ -->
+<div class="page" id="p3">
+  <div class="glow-top"></div>
+  <div class="content center">
+    <div class="sec-label">WHY DMOUR</div>
+    <h2 class="sec-title">디무르 상담이 다른 이유</h2>
+    <p class="sec-sub">듣기 좋은 말 대신, 상황을 바꾸는 상담을 합니다.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="num">ONE</div>
+        <h3>감정이 아닌, 상황을 봅니다</h3>
+        <p>내 편에서 위로만 하는 상담이 아니라, 제3자의 시선으로 관계를 객관적으로 진단합니다. 그래야 정확한 답이 나옵니다.</p>
+      </div>
+      <div class="why-card">
+        <div class="num">TWO</div>
+        <h3>"그래서 뭘 해야 하는지"까지</h3>
+        <p>진단에서 끝나지 않습니다. 오늘 보낼 연락 한 줄부터 앞으로의 단계별 행동 지침까지, 실행 가능한 가이드를 드립니다.</p>
+      </div>
+      <div class="why-card">
+        <div class="num">THREE</div>
+        <h3>상담이 끝나도 곁에 있습니다</h3>
+        <p>50분 상담은 핵심 요약본과 7일 이내 질문권으로 이어집니다. 상담 이후 흔들리는 순간까지 함께합니다.</p>
+      </div>
+    </div>
+  </div>
+  <div class="page-foot"><span>DMOUR</span><span class="dot">✦</span><span>03</span></div>
+</div>
+
+<!-- ═══════════ PAGE 4 · 가격 1 ═══════════ -->
+<div class="page tight" id="p4">
+  <div class="glow-top"></div>
+  <div class="content">
+    <div class="sec-label">MENU</div>
+    <h2 class="sec-title">상담 안내</h2>
+    <p class="sec-sub">고민의 깊이에 맞는 상담을 선택해 주세요.</p>
+
+    <div class="price-group-label first">카카오톡 상담</div>
+
+    <div class="price-card">
+      <div class="price-head">
+        <h3>카톡 1문 1답</h3>
+        <div class="price">10,000<small>원</small></div>
+      </div>
+      <p class="desc">답이 필요한 질문 하나, 결론만 짧고 명확하게.</p>
+      <ul>
+        <li>질문 1개 + 핵심 결론 답변</li>
+        <li>"연락해도 될까요?" 같은 즉답형 고민에 추천</li>
+      </ul>
+    </div>
+
+    <div class="price-card">
+      <div class="price-head">
+        <h3>카톡 심층 상담</h3>
+        <div class="price">25,000<small>원</small></div>
+      </div>
+      <p class="desc">사연 전체를 읽고, 충분히 대화하며 정리합니다.</p>
+      <ul>
+        <li>사연 접수 → 상세 답변 → 추가 질문 → 답변</li>
+        <li>글로 정리하며 차분히 상담받고 싶은 분께 추천</li>
+      </ul>
+    </div>
+
+    <div class="price-group-label">전화 상담</div>
+
+    <div class="price-card">
+      <div class="price-head">
+        <h3>전화 30분</h3>
+        <div class="price">50,000<small>원</small></div>
+      </div>
+      <p class="desc">하나의 고민을 빠르고 명확하게.</p>
+      <ul>
+        <li>가벼운 고민 정리</li>
+        <li>상황에 대한 객관적 진단</li>
+        <li>바로 실행할 행동 가이드 제시</li>
+      </ul>
+    </div>
+  </div>
+  <div class="page-foot"><span>DMOUR</span><span class="dot">✦</span><span>04</span></div>
+</div>
+
+<!-- ═══════════ PAGE 5 · 가격 2 ═══════════ -->
+<div class="page tight" id="p5">
+  <div class="glow-top"></div>
+  <div class="content">
+    <div class="sec-label">MENU</div>
+    <h2 class="sec-title">전화 상담 · 깊이 있는 시간</h2>
+    <p class="sec-sub">가장 많은 분이 50분 상담을 선택하십니다.</p>
+
+    <div class="price-card best">
+      <div class="badge">가장 많이 선택 ✦</div>
+      <div class="price-head">
+        <h3>전화 50분</h3>
+        <div class="price">70,000<small>원</small></div>
+      </div>
+      <p class="desc">관계의 뿌리부터 회복까지, 깊이 있는 상담.</p>
+      <ul>
+        <li>전체 연애 패턴 · 근본 원인 분석</li>
+        <li>단계별 행동 지침 안내</li>
+        <li>무너진 자존감 회복 케어</li>
+      </ul>
+      <div class="bonus">
+        ✦ 특별 혜택 — 상담 핵심 요약본 카톡 전송 + 7일 이내 추가 질문권 1회
+      </div>
+    </div>
+
+    <div class="price-card">
+      <div class="price-head">
+        <h3>전화 60분</h3>
+        <div class="price">80,000<small>원</small></div>
+      </div>
+      <p class="desc">복잡하게 얽힌 상황을 여유 있게 풀어냅니다.</p>
+      <ul>
+        <li>50분 상담 구성 + 여유 있는 심층 대화</li>
+        <li>사연이 길거나 고민이 여러 갈래인 분께 추천</li>
+      </ul>
+    </div>
+
+    <div class="event-banner">
+      <div class="ttl">💌 후기 이벤트 진행 중</div>
+      <p>전화 상담 후 100~300자 후기를 남겨주시면<br><b>상담 금액의 50%를 환불</b>해 드립니다. (기간 한정)</p>
+    </div>
+
+    <p class="note-line">⏱ 상담 중 대화가 더 필요하신 경우,<br>10분 초과 시 10,000원의 추가 비용이 발생합니다.</p>
+  </div>
+  <div class="page-foot"><span>DMOUR</span><span class="dot">✦</span><span>05</span></div>
+</div>
+
+<!-- ═══════════ PAGE 6 · 추가 옵션 ═══════════ -->
+<div class="page" id="p6">
+  <div class="glow-top"></div>
+  <div class="content center">
+    <div class="sec-label">ADD-ON</div>
+    <h2 class="sec-title">추가 선택 옵션</h2>
+    <p class="sec-sub">더 깊은 분석, 더 급한 마음을 위한 선택지입니다.</p>
+
+    <div class="addon-card">
+      <div class="head">
+        <h3>🌙 심야 · 긴급 상담</h3>
+        <div class="plus">+20,000<small>원</small></div>
+      </div>
+      <p>밤 10시 ~ 새벽 2시, 불안해서 잠이 오지 않는 밤.<br>우선적으로 일정을 배정해 드립니다. (스케줄 사전 협의 필수)</p>
+    </div>
+
+    <div class="addon-card">
+      <div class="head">
+        <h3>📱 카톡 대화 심층 분석</h3>
+        <div class="plus">+10,000<small>원</small></div>
+      </div>
+      <p>상대방과 나눈 카톡 캡처본(최대 10장)을 상담 전 미리 분석합니다. 텍스트 속에 숨은 상대방의 진짜 심리를 읽어드립니다.</p>
+    </div>
+
+    <p class="addon-note">연애가 아닌 다른 고민도 상담 가능합니다.<br>누구에게도 하기 힘든 이야기, 편하게 꺼내주세요. (가격 동일)</p>
+  </div>
+  <div class="page-foot"><span>DMOUR</span><span class="dot">✦</span><span>06</span></div>
+</div>
+
+<!-- ═══════════ PAGE 7 · 예약 & 규정 ═══════════ -->
+<div class="page" id="p7">
+  <div class="glow-top"></div>
+  <div class="content">
+    <div class="sec-label">HOW TO</div>
+    <h2 class="sec-title">상담 예약 과정</h2>
+    <p class="sec-sub">신청부터 상담까지, 네 단계면 충분합니다.</p>
+
+    <div class="step">
+      <div class="dot">1</div>
+      <div>
+        <h3>상담 신청 폼 작성</h3>
+        <p>원하는 상담 옵션을 선택하고 구글폼을 작성해 주세요.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="dot">2</div>
+      <div>
+        <h3>예약금 입금 <small style="color:var(--gold);">(상담비에서 차감)</small></h3>
+        <p>안내된 계좌로 예약금 10,000원을 입금해 주세요. <small>* 입금자명 동일 필수</small></p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="dot">3</div>
+      <div>
+        <h3>일정 조율</h3>
+        <p>카카오톡 또는 문자로 상담 시간을 조율해 드립니다.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="dot">4</div>
+      <div>
+        <h3>잔금 납부 & 예약 확정</h3>
+        <p>남은 상담비를 납부해 주시면, 확인 후 예약이 최종 확정됩니다.</p>
+      </div>
+    </div>
+
+    <div class="mini-label">POLICY · 환불 규정</div>
+    <table class="policy-table">
+      <tr>
+        <th>상담 24시간 전까지</th>
+        <td>100% 환불 · 일정 변경 1회 가능</td>
+      </tr>
+      <tr>
+        <th>24시간 ~ 12시간 전</th>
+        <td>50% 환불 (일정 변경 가능)</td>
+      </tr>
+      <tr>
+        <th>12시간 이내 · 노쇼</th>
+        <td>환불 불가</td>
+      </tr>
+    </table>
+    <p class="policy-note">
+      * 예약 시간에서 15분이 지날 때까지 연락이 닿지 않으면 노쇼로 간주됩니다.<br>
+      * 모든 분의 소중한 시간을 지키기 위해 규정은 예외 없이 적용됩니다.
+    </p>
+  </div>
+  <div class="page-foot"><span>DMOUR</span><span class="dot">✦</span><span>07</span></div>
+</div>
+
+<!-- ═══════════ PAGE 8 · FAQ & 마무리 ═══════════ -->
+<div class="page" id="p8">
+  <div class="glow-top"></div>
+  <div class="glow-bottom"></div>
+  <div class="content">
+    <div class="sec-label">FAQ</div>
+    <h2 class="sec-title">자주 묻는 질문</h2>
+
+    <div class="qa">
+      <div class="q">상담 내용은 비밀이 보장되나요?</div>
+      <div class="a">네, 모든 상담 내용과 개인정보는 철저히 비밀로 지켜지며 상담 외 목적으로 사용되지 않습니다.</div>
+    </div>
+    <div class="qa">
+      <div class="q">어떤 고민을 가져가도 되나요?</div>
+      <div class="a">재회, 이별, 짝사랑, 권태기, 상대방 심리 등 연애 전반은 물론, 누구에게도 말하기 힘든 개인적인 고민도 좋습니다.</div>
+    </div>
+    <div class="qa">
+      <div class="q">전화 상담이 처음이라 떨려요.</div>
+      <div class="a">신청서에 적어주신 사연을 미리 꼼꼼히 읽고 준비된 상태로 전화드리기 때문에, 편하게 대화하듯 진행됩니다.</div>
+    </div>
+
+    <div class="cta-block" style="margin-top:36px;">
+      <div class="orn"><span>✦</span></div>
+      <h2>고민은 미룰수록<br><em>마음이 더 무거워집니다</em></h2>
+      <p class="sub">오늘 밤도 뒤척이고 있다면, 지금 신청해 주세요.</p>
+      <div class="cta-pill">상담 신청 — 프로필 링크 · DM</div>
+      <p class="privacy">🔒 상담 내용과 개인정보는 철저히 비밀이 보장됩니다.</p>
+    </div>
+  </div>
+  <div class="page-foot"><span>DMOUR</span><span class="dot">✦</span><span>08</span></div>
+</div>
+
+</body>
+</html>
