@@ -52,6 +52,11 @@
     background-clip: text;
     color: transparent;
   }
+  .hl {
+    background: linear-gradient(transparent 62%, rgba(216,186,126,0.28) 62%);
+    color: var(--ink);
+    padding: 0 1px;
+  }
 
   /* ornamental divider */
   .orn {
@@ -326,6 +331,7 @@
     color: rgba(216,186,126,0.75);
     font-size: 9px;
   }
+  .price-card li b { font-weight: 500; color: var(--gold-soft); }
   .price-card .bonus {
     margin-top: 15px;
     padding: 13px 15px;
@@ -355,7 +361,7 @@
     margin-bottom: 7px;
   }
   .event-banner p { font-size: 13px; color: var(--ink-soft); line-height: 1.85; }
-  .event-banner p b { color: var(--ink); font-weight: 500; }
+  .event-banner p b { color: var(--gold-soft); font-weight: 500; }
   .note-line {
     margin-top: 18px;
     font-size: 12.5px;
@@ -527,7 +533,7 @@
     <div class="eyebrow">연애 · 재회 · 이별 심리상담</div>
     <h1>보내지 못한 연락,<br>삼켜버린 말들<br><em class="grad-text">여기 다 풀어놓으세요</em></h1>
     <p>누구에게도 하지 못한 이야기가 있죠.<br>
-    판단 없이, 끝까지 듣겠습니다.<br>
+    <span class="hl">판단 없이, 끝까지 듣겠습니다.</span><br>
     그리고 지금 필요한 가장 현실적인<br>
     다음 한 걸음을 함께 찾을게요.</p>
     <div class="tags">
@@ -546,11 +552,11 @@
     <h2 class="sec-title">이런 분께<br>필요한 상담입니다</h2>
     <p class="sec-sub">하나라도 해당된다면, 잘 찾아오셨어요.</p>
     <div class="check-list">
-      <div class="check-item">뻔한 위로 말고, 지금 상황에 대한 객관적인 진단이 듣고 싶은 분</div>
-      <div class="check-item">"시간이 약이야" 같은 당연한 말은 그만 듣고 싶은 분</div>
-      <div class="check-item">상대방의 말과 행동 뒤에 숨은 진짜 속마음이 궁금한 분</div>
-      <div class="check-item">연애할 때마다 반복되는 패턴, 그 원인을 이번엔 제대로 알고 싶은 분</div>
-      <div class="check-item">감정에 휩쓸려 후회할 행동을 하기 전에, 방향부터 잡고 싶은 분</div>
+      <div class="check-item"><span class="ci-t">뻔한 위로 말고, 지금 상황에 대한 <span class="hl">객관적인 진단</span>이 듣고 싶은 분</span></div>
+      <div class="check-item"><span class="ci-t">"시간이 약이야" 같은 <span class="hl">당연한 말</span>은 그만 듣고 싶은 분</span></div>
+      <div class="check-item"><span class="ci-t">상대방의 말과 행동 뒤에 숨은 <span class="hl">진짜 속마음</span>이 궁금한 분</span></div>
+      <div class="check-item"><span class="ci-t">연애할 때마다 <span class="hl">반복되는 패턴</span>, 그 원인을 이번엔 제대로 알고 싶은 분</span></div>
+      <div class="check-item"><span class="ci-t">감정에 휩쓸려 후회할 행동을 하기 전에, <span class="hl">방향부터</span> 잡고 싶은 분</span></div>
     </div>
     <p class="closing">위로는 순간을 버티게 하지만,<br><em class="grad-text">정확한 진단은 상황을 바꿉니다.</em></p>
   </div>
@@ -566,17 +572,17 @@
       <div class="why-card">
         <div class="num">ONE</div>
         <h3>듣기 좋은 말은 하지 않습니다</h3>
-        <p>"괜찮아질 거야"는 위로가 아니라 미룸이에요. 관계가 왜 여기까지 왔는지 제3자의 눈으로 정확히 짚고, 아픈 이야기라도 필요하다면 말씀드립니다.</p>
+        <p>"괜찮아질 거야"는 위로가 아니라 미룸이에요. 관계가 왜 여기까지 왔는지 <span class="hl">제3자의 눈으로 정확히 짚고</span>, 아픈 이야기라도 필요하다면 말씀드립니다.</p>
       </div>
       <div class="why-card">
         <div class="num">TWO</div>
         <h3>상담이 끝나면, 할 일이 생깁니다</h3>
-        <p>감정 정리로 끝나지 않아요. 오늘 보낼 답장의 온도부터 앞으로의 단계까지, 지금 상황에 맞춘 구체적인 행동 순서를 드립니다.</p>
+        <p>감정 정리로 끝나지 않아요. 오늘 보낼 답장의 온도부터 앞으로의 단계까지, 지금 상황에 맞춘 <span class="hl">구체적인 행동 순서</span>를 드립니다.</p>
       </div>
       <div class="why-card">
         <div class="num">THREE</div>
         <h3>혼자 남겨두지 않습니다</h3>
-        <p>50분 상담 후에는 핵심 정리본을 카톡으로 보내드리고, 7일 안에 흔들리는 순간이 오면 한 번 더 질문하실 수 있어요. 상담은 끝나도 방향은 남도록.</p>
+        <p>50분 상담 후에는 핵심 정리본을 카톡으로 보내드리고, 7일 안에 흔들리는 순간이 오면 한 번 더 질문하실 수 있어요. <span class="hl">상담은 끝나도 방향은 남도록.</span></p>
       </div>
     </div>
   </div>
@@ -599,7 +605,7 @@
       <p class="desc">머릿속을 떠나지 않는 질문 하나, 결론부터.</p>
       <ul>
         <li>"지금 연락해도 될까요?" 같은 즉답형 질문</li>
-        <li>망설임을 끊어내는 명확한 결론 한 줄</li>
+        <li>망설임을 끊어내는 <b>명확한 결론 한 줄</b></li>
       </ul>
     </div>
 
@@ -624,8 +630,8 @@
       </div>
       <p class="desc">하나의 고민을 집중해서, 명확하게.</p>
       <ul>
-        <li>지금 상황에 대한 객관적인 진단</li>
-        <li>오늘부터 할 수 있는 행동 가이드</li>
+        <li>지금 상황에 대한 <b>객관적인 진단</b></li>
+        <li>오늘부터 할 수 있는 <b>행동 가이드</b></li>
         <li>답이 필요한 고민이 뚜렷할 때 추천</li>
       </ul>
     </div>
@@ -638,9 +644,9 @@
       </div>
       <p class="desc">이별의 원인부터 자존감 회복까지, 가장 깊은 상담.</p>
       <ul>
-        <li>반복되는 연애 패턴, 그 뿌리부터 분석</li>
-        <li>무엇을 · 언제 · 어떻게 — 단계별 행동 지침</li>
-        <li>무너진 자존감을 다시 세우는 회복 케어</li>
+        <li>반복되는 <b>연애 패턴</b>, 그 뿌리부터 분석</li>
+        <li>무엇을 · 언제 · 어떻게 — <b>단계별 행동 지침</b></li>
+        <li>무너진 자존감을 다시 세우는 <b>회복 케어</b></li>
       </ul>
       <div class="bonus">
         ✦ 특별 혜택 — 상담 핵심 정리본 카톡 전송 + 7일 이내 추가 질문권 1회
@@ -680,7 +686,7 @@
         <h3>심야 · 긴급 상담</h3>
         <div class="plus">+20,000<small>원</small></div>
       </div>
-      <p>새벽의 감정은 낮보다 크게 다가오죠. 불안이 잠을 이기는 밤 — 밤 10시부터 새벽 2시 사이, 우선적으로 일정을 배정해 드립니다. (사전 협의 필수)</p>
+      <p>새벽의 감정은 낮보다 크게 다가오죠. 불안이 잠을 이기는 밤 — 밤 10시부터 새벽 2시 사이, <span class="hl">우선적으로 일정을 배정</span>해 드립니다. (사전 협의 필수)</p>
     </div>
 
     <div class="addon-card">
@@ -688,7 +694,7 @@
         <h3>카톡 대화 심층 분석</h3>
         <div class="plus">+10,000<small>원</small></div>
       </div>
-      <p>두 분의 대화 캡처(최대 10장)를 상담 전에 미리 읽고 들어갑니다. 문장 사이에 숨어 있는 상대방의 온도와 진짜 심리를 짚어드려요.</p>
+      <p>두 분의 대화 캡처(최대 10장)를 상담 전에 미리 읽고 들어갑니다. 문장 사이에 숨어 있는 <span class="hl">상대방의 온도와 진짜 심리</span>를 짚어드려요.</p>
     </div>
 
     <p class="addon-note">연애가 아니어도 괜찮아요.<br>가족, 친구, 나 자신에 대한 고민까지,<br>꺼내기 힘들었던 이야기라면 무엇이든<br>같은 가격으로 들어드립니다.</p>
@@ -770,15 +776,15 @@
 
     <details>
       <summary>상담 내용은 비밀이 보장되나요?</summary>
-      <div class="a">네. 모든 이야기는 상담 밖으로 나가지 않습니다. 개인정보 역시 상담 외의 목적으로는 사용하지 않아요. 마음 놓고 이야기해 주세요.</div>
+      <div class="a">네. 모든 이야기는 <span class="hl">상담 밖으로 나가지 않습니다.</span> 개인정보 역시 상담 외의 목적으로는 사용하지 않아요. 마음 놓고 이야기해 주세요.</div>
     </details>
     <details>
       <summary>무슨 말부터 해야 할지 모르겠어요.</summary>
-      <div class="a">괜찮아요. 신청서의 질문에 답하다 보면 자연스럽게 정리됩니다. 두서없이 적으셔도 제가 맥락을 찾아 읽어요. 정리는 제 몫입니다.</div>
+      <div class="a">괜찮아요. 신청서의 질문에 답하다 보면 자연스럽게 정리됩니다. 두서없이 적으셔도 제가 맥락을 찾아 읽어요. <span class="hl">정리는 제 몫입니다.</span></div>
     </details>
     <details>
       <summary>전화 상담이 처음이라 떨려요.</summary>
-      <div class="a">적어주신 사연을 미리 꼼꼼히 읽고 준비된 상태로 전화드려요. 처음부터 설명하실 필요 없이, 편하게 대화하듯 시작하시면 됩니다.</div>
+      <div class="a">적어주신 사연을 미리 꼼꼼히 읽고 <span class="hl">준비된 상태로 전화드려요.</span> 처음부터 설명하실 필요 없이, 편하게 대화하듯 시작하시면 됩니다.</div>
     </details>
     <details>
       <summary>카톡 상담은 얼마 만에 답변을 받나요?</summary>
