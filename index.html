@@ -512,6 +512,16 @@
     padding: 22px;
     text-align: center;
   }
+  a.event-banner {
+    display: block;
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  a.event-banner:active { transform: scale(0.985); }
+  a.event-banner:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+  }
   .event-banner .ttl {
     font-family: var(--serif-kr);
     font-size: 15.5px;
@@ -521,6 +531,21 @@
   }
   .event-banner p { font-size: 13px; color: var(--ink-soft); line-height: 1.85; }
   .event-banner p b { color: var(--gold-soft); font-weight: 500; }
+  .event-banner .go {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 14px;
+    padding: 9px 20px;
+    border-radius: 999px;
+    background: var(--accent-grad);
+    color: #2b2112;
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    box-shadow: 0 5px 20px rgba(216,186,126,0.26);
+  }
+  .event-banner .go::after { content: "→"; font-size: 13px; }
   .note-line {
     margin-top: 18px;
     font-size: 12.5px;
@@ -906,10 +931,11 @@
       </ul>
     </div>
 
-    <div class="event-banner">
+    <a class="event-banner" href="https://forms.gle/JLru4uYSxo2dRywo8" target="_blank" rel="noopener">
       <div class="ttl">후기 남기고, 절반 돌려받기</div>
       <p>전화 상담 후 100~300자 후기를 남겨주시면<br><b>상담 금액의 50%를 환불</b>해 드려요. (기간 한정)</p>
-    </div>
+      <span class="go">지금 상담 신청하기</span>
+    </a>
 
     <p class="note-line">상담 중 이야기가 더 필요하시면 연장할 수 있어요.<br>10분 초과 시 10,000원의 추가 비용이 발생합니다.</p>
   </div>
