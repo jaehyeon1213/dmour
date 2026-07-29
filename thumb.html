@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>디무르 썸네일 — 네이버 엑스퍼트용</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Noto+Serif+KR:wght@400;500;600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0b0812; }
+  .thumb {
+    width: 1200px; height: 1200px;
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse 70% 55% at 22% 18%, rgba(141,120,208,0.30), transparent 70%),
+      radial-gradient(ellipse 55% 45% at 88% 72%, rgba(141,120,208,0.34), transparent 70%),
+      radial-gradient(ellipse 40% 30% at 75% 20%, rgba(216,186,126,0.10), transparent 65%),
+      #14101f;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #f4f1fb;
+    word-break: keep-all;
+  }
+  .frame1 { position: absolute; inset: 34px; border: 1.5px solid rgba(216,186,126,0.30); pointer-events: none; z-index: 5; }
+  .frame2 { position: absolute; inset: 42px; border: 1px solid rgba(183,164,236,0.13); pointer-events: none; z-index: 5; }
+
+  .star { position: absolute; color: rgba(239,221,182,0.7); z-index: 4; }
+  .s1 { left: 8%; top: 44%; font-size: 20px; }
+  .s2 { left: 46%; top: 12%; font-size: 13px; color: rgba(183,164,236,0.8); }
+  .s3 { right: 8%; top: 26%; font-size: 16px; }
+
+  /* watermark */
+  .wm {
+    position: absolute;
+    right: -40px; top: 340px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 210px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: rgba(183,164,236,0.08);
+    z-index: 1;
+    line-height: 1;
+  }
+
+  /* header */
+  .head {
+    position: absolute;
+    top: 92px; left: 96px;
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    z-index: 3;
+  }
+  .moon {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 32%, #f8eed6, #d8ba7e 72%);
+    box-shadow: 0 0 44px 12px rgba(216,186,126,0.30), 0 0 110px 40px rgba(141,120,208,0.22);
+    position: relative;
+  }
+  .moon::after { content: ""; position: absolute; inset: -13px; border-radius: 50%; border: 1px solid rgba(239,221,182,0.30); }
+  .brand-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    letter-spacing: 0.42em;
+    color: #d8ba7e;
+    font-weight: 500;
+    line-height: 1.1;
+  }
+  .brand-kr { font-size: 17px; letter-spacing: 0.5em; color: #8f83af; margin-top: 6px; }
+
+  /* main copy */
+  .copy {
+    position: absolute;
+    left: 96px; top: 300px;
+    z-index: 3;
+  }
+  .copy .eyebrow {
+    font-size: 27px;
+    letter-spacing: 0.3em;
+    color: #b7a4ec;
+    margin-bottom: 34px;
+    font-weight: 400;
+  }
+  .copy h1 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 92px;
+    font-weight: 600;
+    line-height: 1.42;
+  }
+  .copy h1 .gold {
+    background: linear-gradient(115deg, #e9d09b, #f6ead0 45%, #d3ae72 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .copy .sub {
+    margin-top: 36px;
+    font-size: 30px;
+    font-weight: 300;
+    color: #c6bcdd;
+    line-height: 1.7;
+  }
+
+  /* chips */
+  .chips {
+    position: absolute;
+    left: 96px; bottom: 116px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    z-index: 3;
+  }
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 26px;
+    color: #efddb6;
+    border: 1.5px solid rgba(216,186,126,0.45);
+    background: rgba(216,186,126,0.07);
+    border-radius: 999px;
+    padding: 13px 30px;
+    width: fit-content;
+    font-weight: 400;
+  }
+  .chip .m { color: #d8ba7e; font-size: 15px; }
+
+  /* portrait */
+  .portrait-glow {
+    position: absolute;
+    right: 30px; bottom: -60px;
+    width: 620px; height: 620px;
+    background: radial-gradient(circle, rgba(141,120,208,0.38), rgba(141,120,208,0.12) 48%, transparent 70%);
+    z-index: 1;
+  }
+  .portrait {
+    position: absolute;
+    right: 44px; bottom: 0;
+    width: 540px;
+    z-index: 2;
+    filter: saturate(0.88) brightness(0.95) contrast(1.03);
+    -webkit-mask-image: linear-gradient(180deg, #000 86%, rgba(0,0,0,0.4) 96%, transparent 100%);
+    mask-image: linear-gradient(180deg, #000 86%, rgba(0,0,0,0.4) 96%, transparent 100%);
+  }
+</style>
+</head>
+<body>
+<div class="thumb">
+  <div class="frame1"></div>
+  <div class="frame2"></div>
+  <div class="wm">DM</div>
+  <span class="star s1">✦</span>
+  <span class="star s2">✦</span>
+  <span class="star s3">✦</span>
+
+  <div class="head">
+    <div class="moon"></div>
+    <div>
+      <div class="brand-en">DMOUR</div>
+      <div class="brand-kr">디 무 르</div>
+    </div>
+  </div>
+
+  <div class="copy">
+    <div class="eyebrow">연애 · 재회 · 이별 심리상담</div>
+    <h1>뻔한 위로 대신,<br><span class="gold">정확한 진단</span></h1>
+    <div class="sub">지금 상황에 대한 객관적인 분석과<br>오늘부터 할 수 있는 행동 가이드</div>
+  </div>
+
+  <div class="chips">
+    <div class="chip"><span class="m">✦</span>심리상담사 1급</div>
+    <div class="chip"><span class="m">✦</span>누적 상담 3,000+</div>
+  </div>
+
+  <div class="portrait-glow"></div>
+  <img class="portrait" src="portrait.webp" alt="">
+</div>
+</body>
+</html>
