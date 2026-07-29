@@ -236,6 +236,13 @@
     object-fit: cover;
     object-position: center top;
     display: block;
+    filter: saturate(0.88) brightness(0.97);
+  }
+  .portrait::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(141,120,208,0.10) 0%, transparent 40%, rgba(29,23,49,0.55) 100%);
+    pointer-events: none;
   }
   .portrait .ph {
     position: absolute; inset: 0;
@@ -640,7 +647,7 @@
     <p class="sec-sub">연애·재회·이별 상담 <b style="font-weight:500; color:var(--ink-soft);">디무르</b></p>
 
     <div class="portrait">
-      <div class="ph"><div class="m"></div><div class="t">DMOUR</div></div>
+      <img src="portrait.webp" alt="상담가 디무르" width="648" height="774">
     </div>
 
     <div class="stat-row">
