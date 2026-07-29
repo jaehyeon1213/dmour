@@ -11,6 +11,7 @@
   body { background: #0b0812; }
   .thumb {
     width: 1200px; height: 1200px;
+    margin: 0 auto 40px;
     position: relative;
     overflow: hidden;
     background:
@@ -144,10 +145,118 @@
     -webkit-mask-image: linear-gradient(180deg, #000 86%, rgba(0,0,0,0.4) 96%, transparent 100%);
     mask-image: linear-gradient(180deg, #000 86%, rgba(0,0,0,0.4) 96%, transparent 100%);
   }
+
+  /* ═══════ 가로형 (16:9 · 1200×675) ═══════ */
+  .wide { width: 1200px; height: 675px; }
+  .wide .frame1 { inset: 26px; }
+  .wide .frame2 { inset: 33px; }
+  .wide .head { top: 62px; left: 78px; gap: 20px; }
+  .wide .moon { width: 48px; height: 48px; }
+  .wide .moon::after { inset: -10px; }
+  .wide .brand-en { font-size: 30px; letter-spacing: 0.4em; }
+  .wide .brand-kr { font-size: 13px; margin-top: 4px; }
+  .wide .copy { left: 78px; top: 186px; }
+  .wide .copy .eyebrow { font-size: 21px; margin-bottom: 22px; }
+  .wide .copy h1 { font-size: 66px; line-height: 1.38; }
+  .wide .copy .sub { margin-top: 24px; font-size: 22px; line-height: 1.65; }
+  .wide .chips { left: 78px; bottom: 62px; flex-direction: row; gap: 12px; }
+  .wide .chip { font-size: 19px; padding: 9px 22px; gap: 10px; }
+  .wide .chip .m { font-size: 12px; }
+  .wide .wm { right: -20px; top: 130px; font-size: 200px; }
+  .wide .portrait-glow { right: 20px; bottom: -140px; width: 520px; height: 520px; }
+  .wide .portrait { right: 56px; width: 400px; }
+  .wide .s1 { left: 4%; top: 62%; font-size: 15px; }
+  .wide .s2 { left: 52%; top: 14%; font-size: 11px; }
+  .wide .s3 { right: 6%; top: 22%; font-size: 13px; }
+
+  /* ═══════ 와이드 배너 (2.4:1 · 1200×500) ═══════ */
+  .banner { width: 1200px; height: 500px; }
+  .banner .frame1 { inset: 22px; }
+  .banner .frame2 { inset: 28px; }
+  .banner .head { top: 52px; left: 72px; gap: 18px; }
+  .banner .moon { width: 42px; height: 42px; }
+  .banner .moon::after { inset: -9px; }
+  .banner .brand-en { font-size: 26px; letter-spacing: 0.4em; }
+  .banner .brand-kr { font-size: 12px; margin-top: 3px; }
+  .banner .copy { left: 72px; top: 158px; }
+  .banner .copy .eyebrow { font-size: 18px; margin-bottom: 18px; }
+  .banner .copy h1 { font-size: 54px; line-height: 1.36; }
+  .banner .copy .sub { display: none; }
+  .banner .chips { left: 72px; bottom: 52px; flex-direction: row; gap: 10px; }
+  .banner .chip { font-size: 17px; padding: 8px 20px; gap: 9px; }
+  .banner .chip .m { font-size: 11px; }
+  .banner .wm { right: 10px; top: 80px; font-size: 160px; }
+  .banner .portrait-glow { right: 60px; bottom: -160px; width: 440px; height: 440px; }
+  .banner .portrait { right: 90px; width: 330px; }
+  .banner .s1 { left: 3.5%; top: 64%; font-size: 13px; }
+  .banner .s2 { left: 50%; top: 16%; font-size: 10px; }
+  .banner .s3 { right: 5%; top: 24%; font-size: 12px; }
 </style>
 </head>
 <body>
 <div class="thumb">
+  <div class="frame1"></div>
+  <div class="frame2"></div>
+  <div class="wm">DM</div>
+  <span class="star s1">✦</span>
+  <span class="star s2">✦</span>
+  <span class="star s3">✦</span>
+
+  <div class="head">
+    <div class="moon"></div>
+    <div>
+      <div class="brand-en">DMOUR</div>
+      <div class="brand-kr">디 무 르</div>
+    </div>
+  </div>
+
+  <div class="copy">
+    <div class="eyebrow">연애 · 재회 · 이별 심리상담</div>
+    <h1>뻔한 위로 대신,<br><span class="gold">정확한 진단</span></h1>
+    <div class="sub">지금 상황에 대한 객관적인 분석과<br>오늘부터 할 수 있는 행동 가이드</div>
+  </div>
+
+  <div class="chips">
+    <div class="chip"><span class="m">✦</span>심리상담사 1급</div>
+    <div class="chip"><span class="m">✦</span>누적 상담 3,000+</div>
+  </div>
+
+  <div class="portrait-glow"></div>
+  <img class="portrait" src="portrait.webp" alt="">
+</div>
+
+<div class="thumb wide">
+  <div class="frame1"></div>
+  <div class="frame2"></div>
+  <div class="wm">DM</div>
+  <span class="star s1">✦</span>
+  <span class="star s2">✦</span>
+  <span class="star s3">✦</span>
+
+  <div class="head">
+    <div class="moon"></div>
+    <div>
+      <div class="brand-en">DMOUR</div>
+      <div class="brand-kr">디 무 르</div>
+    </div>
+  </div>
+
+  <div class="copy">
+    <div class="eyebrow">연애 · 재회 · 이별 심리상담</div>
+    <h1>뻔한 위로 대신,<br><span class="gold">정확한 진단</span></h1>
+    <div class="sub">지금 상황에 대한 객관적인 분석과<br>오늘부터 할 수 있는 행동 가이드</div>
+  </div>
+
+  <div class="chips">
+    <div class="chip"><span class="m">✦</span>심리상담사 1급</div>
+    <div class="chip"><span class="m">✦</span>누적 상담 3,000+</div>
+  </div>
+
+  <div class="portrait-glow"></div>
+  <img class="portrait" src="portrait.webp" alt="">
+</div>
+
+<div class="thumb banner">
   <div class="frame1"></div>
   <div class="frame2"></div>
   <div class="wm">DM</div>
