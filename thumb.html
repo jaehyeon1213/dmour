@@ -5,7 +5,7 @@
 <title>디무르 썸네일 — 네이버 엑스퍼트용</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Noto+Serif+KR:wght@400;500;600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Noto+Serif+KR:wght@400;500;600&family=Noto+Sans+KR:wght@300;400;500;700;900&family=Nanum+Gothic:wght@400;700;800&family=Black+Han+Sans&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { background: #0b0812; }
@@ -85,10 +85,11 @@
     font-weight: 400;
   }
   .copy h1 {
-    font-family: 'Noto Serif KR', serif;
+    font-family: 'Nanum Gothic', 'Noto Sans KR', sans-serif;
     font-size: 92px;
-    font-weight: 600;
+    font-weight: 800;
     line-height: 1.42;
+    letter-spacing: -0.02em;
   }
   .copy h1 .gold {
     background: linear-gradient(115deg, #e9d09b, #f6ead0 45%, #d3ae72 90%);
@@ -96,6 +97,7 @@
     background-clip: text;
     color: transparent;
   }
+  .copy .sub .sep { display: none; }
   .copy .sub {
     margin-top: 36px;
     font-size: 30px;
@@ -127,6 +129,30 @@
     font-weight: 400;
   }
   .chip .m { color: #d8ba7e; font-size: 15px; }
+  .chip.ig {
+    border-color: rgba(183,164,236,0.55);
+    background: rgba(183,164,236,0.10);
+    color: #d9cdf6;
+  }
+  .chip.ig .m { color: #b7a4ec; }
+  .chip.ig b { font-weight: 700; color: #fff; }
+
+  /* free-resource ribbon */
+  .free {
+    position: absolute;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-radius: 999px;
+    padding: 12px 26px;
+    font-size: 22px;
+    font-weight: 500;
+    color: #2b2112;
+    background: linear-gradient(135deg, #cfb180, #f6ead0 52%, #cfb180);
+    box-shadow: 0 8px 30px rgba(216,186,126,0.30);
+  }
+  .free .g { font-size: 15px; }
 
   /* portrait */
   .portrait-glow {
@@ -155,13 +181,18 @@
   .wide .moon::after { inset: -10px; }
   .wide .brand-en { font-size: 30px; letter-spacing: 0.4em; }
   .wide .brand-kr { font-size: 13px; margin-top: 4px; }
-  .wide .copy { left: 78px; top: 186px; }
-  .wide .copy .eyebrow { font-size: 21px; margin-bottom: 22px; }
-  .wide .copy h1 { font-size: 66px; line-height: 1.38; }
-  .wide .copy .sub { margin-top: 24px; font-size: 22px; line-height: 1.65; }
-  .wide .chips { left: 78px; bottom: 62px; flex-direction: row; gap: 12px; }
-  .wide .chip { font-size: 19px; padding: 9px 22px; gap: 10px; }
+  .wide .copy { left: 78px; top: 168px; }
+  .wide .copy .eyebrow { font-size: 21px; margin-bottom: 20px; }
+  .wide .copy h1 { font-size: 64px; line-height: 1.38; }
+  .wide .copy .sub { margin-top: 22px; font-size: 21px; line-height: 1.6; }
+  .wide .copy .sub br { display: none; }
+  .wide .copy .sub .sep { display: inline; }
+  .wide .s1 { display: none; }
+  .wide .chips { left: 78px; bottom: 62px; flex-direction: row; gap: 11px; flex-wrap: wrap; max-width: 700px; }
+  .wide .chip { font-size: 18px; padding: 9px 20px; gap: 9px; }
   .wide .chip .m { font-size: 12px; }
+  .wide .free { left: 78px; bottom: 126px; font-size: 19px; padding: 10px 22px; gap: 10px; }
+  .wide .free .g { font-size: 13px; }
   .wide .wm { right: -20px; top: 130px; font-size: 200px; }
   .wide .portrait-glow { right: 20px; bottom: -140px; width: 520px; height: 520px; }
   .wide .portrait { right: 56px; width: 400px; }
@@ -213,12 +244,15 @@
   <div class="copy">
     <div class="eyebrow">연애 · 재회 · 이별 심리상담</div>
     <h1>뻔한 위로 대신,<br><span class="gold">정확한 진단</span></h1>
-    <div class="sub">지금 상황에 대한 객관적인 분석과<br>오늘부터 할 수 있는 행동 가이드</div>
+    <div class="sub">지금 상황에 대한 객관적인 분석과<span class="sep"> </span><br>오늘부터 할 수 있는 행동 가이드</div>
   </div>
+
+  <div class="free"><span class="g">🎁</span>연애 무료 자료 배포 중</div>
 
   <div class="chips">
     <div class="chip"><span class="m">✦</span>심리상담사 1급</div>
     <div class="chip"><span class="m">✦</span>누적 상담 3,000+</div>
+    <div class="chip ig"><span class="m">✦</span>인스타 <b>30K</b></div>
   </div>
 
   <div class="portrait-glow"></div>
@@ -244,12 +278,15 @@
   <div class="copy">
     <div class="eyebrow">연애 · 재회 · 이별 심리상담</div>
     <h1>뻔한 위로 대신,<br><span class="gold">정확한 진단</span></h1>
-    <div class="sub">지금 상황에 대한 객관적인 분석과<br>오늘부터 할 수 있는 행동 가이드</div>
+    <div class="sub">지금 상황에 대한 객관적인 분석과<span class="sep"> </span><br>오늘부터 할 수 있는 행동 가이드</div>
   </div>
+
+  <div class="free"><span class="g">🎁</span>연애 무료 자료 배포 중</div>
 
   <div class="chips">
     <div class="chip"><span class="m">✦</span>심리상담사 1급</div>
     <div class="chip"><span class="m">✦</span>누적 상담 3,000+</div>
+    <div class="chip ig"><span class="m">✦</span>인스타 <b>30K</b></div>
   </div>
 
   <div class="portrait-glow"></div>
@@ -275,12 +312,15 @@
   <div class="copy">
     <div class="eyebrow">연애 · 재회 · 이별 심리상담</div>
     <h1>뻔한 위로 대신,<br><span class="gold">정확한 진단</span></h1>
-    <div class="sub">지금 상황에 대한 객관적인 분석과<br>오늘부터 할 수 있는 행동 가이드</div>
+    <div class="sub">지금 상황에 대한 객관적인 분석과<span class="sep"> </span><br>오늘부터 할 수 있는 행동 가이드</div>
   </div>
+
+  <div class="free"><span class="g">🎁</span>연애 무료 자료 배포 중</div>
 
   <div class="chips">
     <div class="chip"><span class="m">✦</span>심리상담사 1급</div>
     <div class="chip"><span class="m">✦</span>누적 상담 3,000+</div>
+    <div class="chip ig"><span class="m">✦</span>인스타 <b>30K</b></div>
   </div>
 
   <div class="portrait-glow"></div>
