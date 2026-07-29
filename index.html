@@ -267,12 +267,12 @@
   .stage-fade {
     position: absolute;
     left: -20px; right: -20px; bottom: -4px;
-    height: 46%;
+    height: 30%;
     z-index: 1;
-    background: linear-gradient(180deg, transparent, rgba(20,16,31,0.5) 40%, rgba(20,16,31,0.9) 72%, #14101f 100%);
+    background: linear-gradient(180deg, transparent, rgba(20,16,31,0.45) 45%, rgba(20,16,31,0.85) 78%, #14101f 100%);
     pointer-events: none;
   }
-  .stage-name { position: relative; z-index: 2; margin-top: -46px; }
+  .stage-name { position: relative; z-index: 2; margin-top: -30px; }
   .stage-name .nm {
     font-family: var(--serif-kr);
     font-size: 24px;
@@ -345,6 +345,58 @@
   }
   .why-card h3 { font-size: 17px; margin-bottom: 9px; }
   .why-card p { font-size: 13.5px; color: var(--ink-soft); line-height: 1.85; }
+
+  /* ---------- reviews ---------- */
+  .review-card {
+    position: relative;
+    background:
+      linear-gradient(155deg, #231b38, #211a34 65%) padding-box,
+      linear-gradient(160deg, rgba(56,44,88,0.9), rgba(44,35,71,0.5) 60%, rgba(216,186,126,0.25)) border-box;
+    border: 1px solid transparent;
+    border-radius: 18px;
+    padding: 30px 24px 22px;
+    margin-bottom: 16px;
+    text-align: left;
+  }
+  .review-card .qm {
+    position: absolute;
+    top: 10px; left: 20px;
+    font-family: var(--serif-en);
+    font-size: 54px;
+    line-height: 1;
+    background: linear-gradient(115deg, #e9d09b, #d3ae72);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    opacity: 0.75;
+  }
+  .review-card p {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    line-height: 1.95;
+    padding-top: 12px;
+  }
+  .review-card .who {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 16px;
+    font-size: 12px;
+    color: var(--ink-dim);
+  }
+  .review-card .who::before {
+    content: "";
+    width: 22px; height: 1px;
+    background: rgba(216,186,126,0.6);
+  }
+  .review-card .who b { font-weight: 500; color: var(--gold); letter-spacing: 0.04em; }
+  .review-note {
+    margin-top: 24px;
+    font-size: 12.5px;
+    color: var(--ink-dim);
+    text-align: center;
+    line-height: 1.9;
+  }
 
   /* ---------- pricing ---------- */
   .pricing {
@@ -680,7 +732,7 @@
       <div class="stage-word" aria-hidden="true">DMOUR</div>
       <span class="stage-star s1" aria-hidden="true">✦</span>
       <span class="stage-star s2" aria-hidden="true">✦</span>
-      <img class="stage-img" src="portrait.webp" alt="상담가 디무르" width="640" height="736">
+      <img class="stage-img" src="portrait.webp" alt="상담가 디무르" width="680" height="856">
       <div class="stage-fade" aria-hidden="true"></div>
       <div class="stage-name">
         <div class="nm">디무르</div>
@@ -733,6 +785,47 @@
         <p>50분 상담 후에는 핵심 정리본을 카톡으로 보내드리고, 7일 안에 흔들리는 순간이 오면 한 번 더 질문하실 수 있어요. <span class="hl">상담은 끝나도 방향은 남도록.</span></p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ═══════════ 상담 후기 ═══════════ -->
+<section id="reviews">
+  <div class="wrap">
+    <div class="sec-label">REVIEWS</div>
+    <h2 class="sec-title">먼저 다녀간 분들의<br>이야기</h2>
+    <p class="sec-sub">실제 후기에서 원문 그대로 옮겼습니다.</p>
+
+    <div class="review-card">
+      <span class="qm" aria-hidden="true">“</span>
+      <p>솔직히 '뭘 그렇게까지 다르겠나' 싶으면서도 지푸라기라도 잡는 심정으로 상담 받아보자 했는데, <span class="hl">너무 도움이 되는 시간이었습니다.</span> 제가 뭘 해야 할지 너무 뚜렷하게 말씀주셔서, 당분간 힘들더라도 열심히 살 수 있는 동력을 얻은 것 같아요.</p>
+      <div class="who"><b>재회 상담</b> 후기</div>
+    </div>
+
+    <div class="review-card">
+      <span class="qm" aria-hidden="true">“</span>
+      <p>정말 돈 자체가 아깝지 않고, <span class="hl">이 금액으로 이 정도 퀄리티의 상담을 받을 수 있는 게 맞는 건가?</span> 싶을 정도의 상담이었어요. 상처받은 마음을 따뜻하게 만져주시면서도, 냉철하게 분석할 부분은 분석해 주셨습니다. 다들 상담받으시길 강추하지만… 저만 알고 싶은걸요 ㅠㅠ</p>
+      <div class="who"><b>연애 상담</b> 후기</div>
+    </div>
+
+    <div class="review-card">
+      <span class="qm" aria-hidden="true">“</span>
+      <p>50분이라는 시간이 전혀 아깝지 않을 만큼 만족스러운 상담이었습니다. 단순히 위로만 해주시는 것이 아니라, <span class="hl">혼자서는 감정에 휘둘려 판단하기 어려웠던 부분들을 객관적으로 짚어주셔서</span> 생각을 정리할 수 있었어요. 저에게는 정말 값진 50분이었습니다.</p>
+      <div class="who"><b>전화 50분</b> 후기</div>
+    </div>
+
+    <div class="review-card">
+      <span class="qm" aria-hidden="true">“</span>
+      <p>상담을 하면 내 마음이 좀 나아질까? 자책하는 걸 멈추게 될까? 반신반의했는데 정말 큰 힘이 되었어요. 오늘 상담을 통해 <span class="hl">제가 이상한 게 아니었다는 확신</span>을 가졌어요. 진심을 담은 따뜻한 말과 위로, 정말 너무 감사합니다.</p>
+      <div class="who"><b>이별 · 자존감 회복</b> 후기</div>
+    </div>
+
+    <div class="review-card">
+      <span class="qm" aria-hidden="true">“</span>
+      <p>우울한 마음에 충동적으로 신청한 건 아닌가 싶었는데, 전혀~~~ 그 돈이 아깝지 않은 상담이었습니다. 제 상황에서 어떻게 해야 하는지 <span class="hl">딱 맞춰서 커리큘럼을 짜주는 느낌</span>이어서 너무 좋았습니다. 이렇게 객관적이고 실용적인 도움을 주는 분은 디무르님뿐이지 않을까 싶네요.</p>
+      <div class="who"><b>연애 · 재회 상담</b> 후기</div>
+    </div>
+
+    <p class="review-note">모든 후기는 실제 상담 후기에서 익명으로 옮겼으며,<br>후기는 지금도 계속 쌓이고 있습니다.</p>
   </div>
 </section>
 
