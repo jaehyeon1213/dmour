@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>유핏토익 | 1년 커리큘럼 · 시즌 안내</title>
+<meta name="description" content="유핏토익의 1년은 시즌 1(1~6월)과 시즌 2(7~12월)로 흐릅니다. 라이브와 VOD 구성, VOD 영상 매칭, 중복 수강 방지 원칙, 1년에 두 번뿐인 할인 안내.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Noto+Serif+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+  :root {
+    --paper: #f4eee2;
+    --paper-2: #fbf7ef;
+    --paper-3: #f8f2e6;
+    --plum: #3c1053;
+    --plum-mid: #5a2478;
+    --plum-soft: #7d5595;
+    --gold: #bd9440;
+    --gold-lt: #e2c68a;
+    --gold-dk: #96712c;
+    --line: #e2d6bf;
+    --line-soft: #eee5d4;
+    --text: #3b3040;
+    --text-dim: #7d7186;
+    --serif-en: 'Cormorant Garamond', serif;
+    --serif-kr: 'Noto Serif KR', serif;
+    --sans: 'Pretendard Variable', 'Noto Sans KR', sans-serif;
+    --gold-grad: linear-gradient(115deg, #a8802f, #dcbd7c 48%, #a8802f);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 400;
+    line-height: 1.75;
+    letter-spacing: -0.01em;
+    word-break: keep-all;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 62px 0; }
+  h1, h2, h3 { font-family: var(--serif-kr); font-weight: 600; }
+  img, svg { max-width: 100%; }
+
+  .grad-text {
+    background: var(--gold-grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .hl {
+    background: linear-gradient(transparent 60%, rgba(189,148,64,0.24) 60%);
+    padding: 0 1px;
+  }
+  .plum-b { color: var(--plum); font-weight: 600; }
+
+  /* ---------- hero ---------- */
+  .hero {
+    position: relative;
+    padding: 66px 0 58px;
+    text-align: center;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse 80% 50% at 50% -6%, rgba(90,36,120,0.13), transparent 70%),
+      radial-gradient(ellipse 50% 34% at 88% 6%, rgba(189,148,64,0.13), transparent 70%),
+      linear-gradient(180deg, #f2ebdd, var(--paper) 70%);
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .ribbon {
+    position: absolute;
+    width: 170%;
+    height: 150px;
+    left: -35%;
+    pointer-events: none;
+    background: linear-gradient(100deg, #2f0c42, #56206f 45%, #3c1053);
+    opacity: 0.92;
+  }
+  .ribbon.top { top: -108px; border-radius: 0 0 60% 45%; transform: rotate(-3deg); }
+  .ribbon.bot { bottom: -112px; border-radius: 45% 60% 0 0; transform: rotate(2deg); }
+  .ribbon::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0;
+    height: 3px;
+    background: var(--gold-grad);
+    opacity: 0.85;
+  }
+  .ribbon.top::after { bottom: 6px; }
+  .ribbon.bot::after { top: 6px; }
+
+  .hero .inner { position: relative; z-index: 1; }
+  .mark {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 26px;
+  }
+  .mark .crest {
+    width: 46px; height: 46px;
+    border-radius: 50%;
+    border: 1px solid rgba(189,148,64,0.75);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold-dk);
+    font-size: 15px;
+    background: radial-gradient(circle at 36% 30%, #fffdf7, #f2e8d4);
+    box-shadow: 0 3px 14px rgba(60,16,83,0.10);
+  }
+  .mark .wm {
+    font-family: var(--serif-en);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.42em;
+    text-indent: 0.42em;
+    color: var(--plum);
+  }
+  .hero .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.26em;
+    text-indent: 0.26em;
+    color: var(--gold-dk);
+    margin-bottom: 15px;
+    font-weight: 500;
+  }
+  .hero h1 {
+    font-size: 27px;
+    line-height: 1.65;
+    color: var(--plum);
+    margin-bottom: 20px;
+  }
+  .hero p {
+    font-size: 15px;
+    color: var(--text-dim);
+    line-height: 1.95;
+  }
+  .hero .tags {
+    display: flex; justify-content: center; gap: 8px;
+    margin-top: 28px; flex-wrap: wrap;
+  }
+  .hero .tags span {
+    font-size: 12px;
+    color: var(--plum-mid);
+    border: 1px solid rgba(125,85,149,0.35);
+    background: rgba(125,85,149,0.06);
+    border-radius: 999px;
+    padding: 5px 14px;
+  }
+
+  /* ---------- section headers ---------- */
+  .sec-label {
+    font-family: var(--serif-en);
+    font-size: 13px;
+    letter-spacing: 0.46em;
+    text-indent: 0.46em;
+    color: var(--gold-dk);
+    text-align: center;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  .sec-title {
+    font-size: 22px;
+    text-align: center;
+    line-height: 1.6;
+    color: var(--plum);
+    margin-bottom: 11px;
+  }
+  .sec-sub {
+    font-size: 14px;
+    color: var(--text-dim);
+    text-align: center;
+    margin-bottom: 34px;
+    line-height: 1.9;
+  }
+  .orn {
+    display: flex; align-items: center; justify-content: center;
+    gap: 12px; margin: 0 auto 20px; width: 180px;
+  }
+  .orn::before, .orn::after {
+    content: ""; flex: 1; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(189,148,64,0.6));
+  }
+  .orn::after { background: linear-gradient(90deg, rgba(189,148,64,0.6), transparent); }
+  .orn span { color: var(--gold); font-size: 10px; line-height: 1; }
+
+  /* ---------- diagram ---------- */
+  .map { background: linear-gradient(180deg, var(--paper), #f1e9da 55%, var(--paper)); }
+  .frame {
+    position: relative;
+    border: 1px solid rgba(189,148,64,0.55);
+    border-radius: 6px;
+    background: linear-gradient(165deg, #fdfaf3, #f7f1e4 70%);
+    padding: 30px 18px 26px;
+    box-shadow: 0 12px 40px rgba(60,16,83,0.07);
+  }
+  .frame::before {
+    content: "";
+    position: absolute; inset: 6px;
+    border: 1px solid rgba(189,148,64,0.3);
+    border-radius: 3px;
+    pointer-events: none;
+  }
+  .legend {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    margin-bottom: 26px;
+    position: relative;
+  }
+  .legend div {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12.5px;
+    color: var(--text-dim);
+  }
+  .legend b { color: var(--plum); font-weight: 600; }
+  .legend .ic { font-size: 13px; line-height: 1; }
+  .legend .ic.h { color: var(--plum); }
+  .legend .ic.s, .legend .ic.c { color: var(--gold); }
+
+  .season-block { position: relative; }
+  .season-block + .season-block { margin-top: 34px; padding-top: 30px; border-top: 1px dashed rgba(189,148,64,0.4); }
+  .season-pill {
+    display: block;
+    width: max-content;
+    max-width: 100%;
+    margin: 0 auto 4px;
+    background: linear-gradient(150deg, #4a1663, #350e49);
+    color: #f7ecd6;
+    border: 1px solid rgba(226,198,138,0.75);
+    border-radius: 999px;
+    padding: 9px 26px;
+    font-family: var(--serif-kr);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(60,16,83,0.20);
+  }
+  .season-pill i {
+    font-style: normal;
+    color: var(--gold-lt);
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: 12.5px;
+    letter-spacing: 0;
+    margin-left: 8px;
+  }
+  .season-cap {
+    text-align: center;
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 2px;
+  }
+  .season-cap b { color: var(--plum); font-weight: 600; }
+
+  /* svg internals */
+  .dg { display: block; width: 100%; height: auto; }
+  .sh-live { fill: #fdfaf2; stroke: #3c1053; stroke-width: 3.4; }
+  .sh-vod { fill: #fdfaf2; stroke: #bd9440; stroke-width: 3; }
+  .badge-shadow { filter: drop-shadow(0 3px 4px rgba(60,16,83,0.16)); }
+  .num {
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 700;
+    font-size: 27px;
+    fill: #3c1053;
+    text-anchor: middle;
+    dominant-baseline: middle;
+  }
+  .num.two { font-size: 23.5px; }
+  .lb {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    text-anchor: middle;
+  }
+  .lb.live { fill: #3c1053; font-style: italic; }
+  .lb.vod { fill: #6d5122; }
+  .rule { stroke: #dccdb2; stroke-width: 1.6; }
+  .rule-dot { fill: #bd9440; }
+  .arc { fill: none; stroke: #c9a765; stroke-width: 2; }
+  .yr {
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 700;
+    font-size: 26px;
+    fill: #3c1053;
+    text-anchor: middle;
+    dominant-baseline: middle;
+  }
+  .year-wrap { margin-top: 26px; }
+
+  .map-note {
+    margin-top: 20px;
+    font-size: 12.5px;
+    color: var(--text-dim);
+    text-align: center;
+    line-height: 1.9;
+  }
+
+  /* ---------- notice ---------- */
+  .notice { background: var(--paper-2); border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); }
+  .n-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 22px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 18px rgba(60,16,83,0.04);
+  }
+  .n-card > .no {
+    display: inline-block;
+    font-family: var(--serif-en);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: var(--gold-dk);
+    border-bottom: 1px solid rgba(189,148,64,0.45);
+    padding-bottom: 3px;
+    margin-bottom: 12px;
+  }
+  .n-card h3 { font-size: 17.5px; color: var(--plum); line-height: 1.55; margin-bottom: 12px; }
+  .n-card p { font-size: 14px; color: var(--text); line-height: 1.9; }
+  .n-card p + p { margin-top: 11px; }
+  .n-card ul { list-style: none; margin-top: 4px; }
+  .n-card li {
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.85;
+    padding-left: 17px;
+    position: relative;
+    margin-bottom: 8px;
+  }
+  .n-card li:last-child { margin-bottom: 0; }
+  .n-card li::before {
+    content: "✦";
+    position: absolute; left: 0; top: 2px;
+    color: var(--gold);
+    font-size: 9px;
+  }
+  .n-card li b, .n-card p b { color: var(--plum); font-weight: 600; }
+
+  .split { display: flex; gap: 12px; flex-wrap: wrap; }
+  .split > div {
+    flex: 1 1 210px;
+    background: linear-gradient(160deg, #fbf6ec, #f7f0e2);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 18px 16px;
+  }
+  .split h4 {
+    font-family: var(--serif-kr);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--plum);
+    margin-bottom: 4px;
+  }
+  .split .rng { font-size: 12px; color: var(--gold-dk); letter-spacing: 0.04em; margin-bottom: 11px; }
+  .split .row { font-size: 13.5px; display: flex; gap: 8px; align-items: baseline; }
+  .split .row + .row { margin-top: 5px; }
+  .split .row .k {
+    flex: 0 0 auto;
+    font-size: 11.5px;
+    font-weight: 600;
+    padding: 2px 9px;
+    border-radius: 999px;
+  }
+  .split .row .k.live { background: rgba(60,16,83,0.10); color: var(--plum); }
+  .split .row .k.vod { background: rgba(189,148,64,0.16); color: var(--gold-dk); }
+  .split .row .v { color: var(--text); }
+
+  /* mapping table */
+  .vtable { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 4px; }
+  .vtable th, .vtable td { padding: 11px 8px; border-bottom: 1px solid var(--line-soft); text-align: left; }
+  .vtable thead th {
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-dim);
+    letter-spacing: 0.04em;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 8px;
+  }
+  .vtable tbody th { color: var(--gold-dk); font-weight: 600; width: 42%; font-family: var(--sans); }
+  .vtable tbody td { color: var(--plum); font-weight: 500; }
+  .vtable tbody tr:last-child th, .vtable tbody tr:last-child td { border-bottom: none; }
+  .vtable .s2 th, .vtable .s2 td { background: rgba(60,16,83,0.028); }
+  .vtable .arrowcell { color: var(--gold) !important; text-align: center; width: 16%; font-weight: 400 !important; }
+
+  /* discount cards */
+  .d-grid { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 2px; }
+  .d-card {
+    flex: 1 1 200px;
+    border-radius: 14px;
+    padding: 20px 18px;
+    position: relative;
+    border: 1px solid var(--line);
+    background: linear-gradient(160deg, #fbf6ec, #f6efe0);
+  }
+  .d-card.top {
+    border: 1px solid rgba(189,148,64,0.85);
+    background: linear-gradient(160deg, #fff9ec, #f8ecd2);
+    box-shadow: 0 8px 26px rgba(189,148,64,0.20);
+  }
+  .d-card .tag {
+    position: absolute;
+    top: -11px; left: 16px;
+    background: var(--gold-grad);
+    color: #fff8e6;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 3px 11px;
+    border-radius: 999px;
+  }
+  .d-card .mth { font-family: var(--serif-kr); font-size: 16px; font-weight: 600; color: var(--plum); margin-bottom: 6px; }
+  .d-card .rate {
+    font-family: var(--serif-en);
+    font-size: 27px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--gold-dk);
+    letter-spacing: 0.01em;
+  }
+  .d-card .rate small { font-family: var(--sans); font-size: 12px; font-weight: 400; color: var(--text-dim); margin-left: 3px; }
+  .d-card .why { font-size: 12.5px; color: var(--text-dim); line-height: 1.8; margin-top: 8px; }
+  .d-card .why b { color: var(--plum); font-weight: 600; }
+
+  /* chain */
+  .chain { display: flex; flex-wrap: wrap; gap: 9px; margin: 16px 0 4px; }
+  .chain .link {
+    flex: 1 1 130px;
+    border: 1px solid var(--line);
+    background: #fbf7ef;
+    border-radius: 12px;
+    padding: 13px 10px;
+    text-align: center;
+    position: relative;
+  }
+  .chain .link.keep { border-color: rgba(60,16,83,0.35); background: rgba(60,16,83,0.05); }
+  .chain .m { font-family: var(--serif-kr); font-size: 14px; font-weight: 600; color: var(--plum); }
+  .chain .t { font-size: 10.5px; color: var(--text-dim); margin: 2px 0 6px; letter-spacing: 0.02em; }
+  .chain .p { font-family: var(--serif-en); font-size: 17px; font-weight: 600; color: var(--gold-dk); line-height: 1.2; }
+  .chain .link.keep .p { color: var(--plum); }
+
+  .callout {
+    margin-top: 16px;
+    background: linear-gradient(135deg, rgba(60,16,83,0.055), rgba(189,148,64,0.10));
+    border: 1px dashed rgba(189,148,64,0.6);
+    border-radius: 12px;
+    padding: 15px 17px;
+    font-size: 13.5px;
+    line-height: 1.85;
+    color: var(--text);
+  }
+  .callout b { color: var(--plum); font-weight: 600; }
+
+  .example {
+    margin-top: 14px;
+    border-left: 2px solid rgba(189,148,64,0.7);
+    background: #fbf7ef;
+    border-radius: 0 12px 12px 0;
+    padding: 15px 17px;
+  }
+  .example .ttl {
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--gold-dk);
+    margin-bottom: 7px;
+  }
+  .example p { font-size: 13.5px; line-height: 1.85; }
+
+  .n-card.warn { border-color: rgba(189,148,64,0.6); background: linear-gradient(165deg, #fffaf0, #fbf4e5); }
+  .n-card.warn h3 { color: var(--gold-dk); }
+  .fixed-live {
+    display: flex; flex-wrap: wrap; gap: 7px;
+    margin: 12px 0 4px;
+  }
+  .fixed-live span {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--plum);
+    background: rgba(60,16,83,0.08);
+    border: 1px solid rgba(60,16,83,0.16);
+    border-radius: 8px;
+    padding: 6px 13px;
+  }
+  .fixed-live span.maybe {
+    color: var(--gold-dk);
+    background: rgba(189,148,64,0.12);
+    border-color: rgba(189,148,64,0.4);
+  }
+
+  /* ---------- close ---------- */
+  .close {
+    text-align: center;
+    padding: 64px 0 40px;
+    background: radial-gradient(ellipse 80% 60% at 50% 108%, rgba(90,36,120,0.14), transparent 70%);
+  }
+  .close h2 { font-size: 20.5px; line-height: 1.7; color: var(--plum); margin-bottom: 12px; }
+  .close p { font-size: 14px; color: var(--text-dim); line-height: 1.9; }
+  footer {
+    text-align: center;
+    padding: 26px 0 40px;
+    font-family: var(--serif-en);
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    color: #a2929f;
+  }
+
+  @media (max-width: 420px) {
+    .wrap { padding: 0 18px; }
+    .hero h1 { font-size: 23.5px; }
+    .sec-title { font-size: 20px; }
+    .frame { padding: 24px 12px 22px; }
+    .vtable th, .vtable td { padding: 10px 5px; font-size: 13px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ HERO ═══════════ -->
+<header class="hero">
+  <div class="ribbon top" aria-hidden="true"></div>
+  <div class="ribbon bot" aria-hidden="true"></div>
+  <div class="wrap inner">
+    <div class="mark">
+      <div class="crest" aria-hidden="true">✦</div>
+      <div class="wm">YOUFIT TOEIC</div>
+    </div>
+    <div class="eyebrow">1년 커리큘럼 안내</div>
+    <h1>유핏토익의 1년은<br><em class="grad-text" style="font-style:normal">이렇게 흘러갑니다</em></h1>
+    <p>시즌 1과 시즌 2, 라이브와 VOD.<br>
+    어떤 달에 들어와도 <span class="hl">겹치지 않게, 손해 없이</span><br>
+    이어갈 수 있도록 설계했습니다.</p>
+    <div class="tags">
+      <span># 시즌제 운영</span>
+      <span># 라이브 &amp; VOD</span>
+      <span># 중복 수강 방지</span>
+      <span># 연속 수강 혜택</span>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════ 한눈에 보는 1년 ═══════════ -->
+<section class="map">
+  <div class="wrap">
+    <div class="sec-label">OVERVIEW</div>
+    <h2 class="sec-title">한눈에 보는 1년</h2>
+    <p class="sec-sub">라이브 수업은 한 시즌 뒤 VOD로 다시 열립니다.<br>화살표는 “그 달의 VOD가 어떤 라이브 영상인지”를 뜻합니다.</p>
+
+    <div class="frame">
+      <div class="legend">
+        <div><span class="ic h">♥</span> <b>라이브</b> 수업</div>
+        <div><span class="ic s">★</span> <b>VOD 첫 오픈</b> · 최저가</div>
+        <div><span class="ic c">●</span> <b>VOD</b> 수업</div>
+      </div>
+
+      <!-- ─── 시즌 1 ─── -->
+      <div class="season-block">
+        <svg class="dg" viewBox="0 22 620 232" role="img" aria-label="시즌 1: 1·2·3월 라이브, 4·5·6월 VOD. 4월 VOD는 1월 라이브 영상, 5월은 2월, 6월은 3월 라이브 영상.">
+          <defs>
+            <marker id="ah1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+              <path d="M0,1 L9,5 L0,9 Z" fill="#c9a765"></path>
+            </marker>
+          </defs>
+
+          <!-- 연결 아치: 1→4, 2→5, 3→6 -->
+          <path class="arc" marker-end="url(#ah1)" d="M52,114 C96,40 302,34 357,110"></path>
+          <path class="arc" marker-end="url(#ah1)" d="M155,114 C199,40 405,34 460,110"></path>
+          <path class="arc" marker-end="url(#ah1)" d="M258,114 C302,40 508,34 563,110"></path>
+
+          <!-- 1 -->
+          <g transform="translate(52,152)" class="badge-shadow">
+            <path class="sh-live" transform="scale(1.12)" d="M0,-13 C-7,-26 -24,-26 -29,-13 C-33,-2 -20,8 0,22 C20,8 33,-2 29,-13 C24,-26 7,-26 0,-13 Z"></path>
+            <text class="num" y="-2">1</text>
+          </g>
+          <text class="lb live" x="52" y="204">Live</text>
+          <line class="rule" x1="14" y1="226" x2="90" y2="226"></line>
+          <circle class="rule-dot" cx="52" cy="226" r="2.6"></circle>
+
+          <!-- 2 -->
+          <g transform="translate(155,152)" class="badge-shadow">
+            <path class="sh-live" transform="scale(1.12)" d="M0,-13 C-7,-26 -24,-26 -29,-13 C-33,-2 -20,8 0,22 C20,8 33,-2 29,-13 C24,-26 7,-26 0,-13 Z"></path>
+            <text class="num" y="-2">2</text>
+          </g>
+          <text class="lb live" x="155" y="204">Live</text>
+          <line class="rule" x1="117" y1="226" x2="193" y2="226"></line>
+          <circle class="rule-dot" cx="155" cy="226" r="2.6"></circle>
+
+          <!-- 3 -->
+          <g transform="translate(258,152)" class="badge-shadow">
+            <path class="sh-live" transform="scale(1.12)" d="M0,-13 C-7,-26 -24,-26 -29,-13 C-33,-2 -20,8 0,22 C20,8 33,-2 29,-13 C24,-26 7,-26 0,-13 Z"></path>
+            <text class="num" y="-2">3</text>
+          </g>
+          <text class="lb live" x="258" y="204">Live</text>
+          <line class="rule" x1="220" y1="226" x2="296" y2="226"></line>
+          <circle class="rule-dot" cx="258" cy="226" r="2.6"></circle>
+
+          <!-- 4 : VOD 첫 오픈 -->
+          <g transform="translate(361,152)" class="badge-shadow">
+            <path class="sh-vod" transform="scale(1.12)" d="M0,-27 L7.4,-10.1 L25.7,-8.3 L11.9,3.9 L15.9,21.8 L0,12.5 L-15.9,21.8 L-11.9,3.9 L-25.7,-8.3 L-7.4,-10.1 Z"></path>
+            <text class="num" y="2">4</text>
+          </g>
+          <text class="lb vod" x="361" y="204">VOD</text>
+          <line class="rule" x1="323" y1="226" x2="399" y2="226"></line>
+          <circle class="rule-dot" cx="361" cy="226" r="2.6"></circle>
+
+          <!-- 5 -->
+          <g transform="translate(464,152)" class="badge-shadow">
+            <circle class="sh-vod" r="26.5" stroke-width="3.3"></circle>
+            <text class="num" y="0">5</text>
+          </g>
+          <text class="lb vod" x="464" y="204">VOD</text>
+          <line class="rule" x1="426" y1="226" x2="502" y2="226"></line>
+          <circle class="rule-dot" cx="464" cy="226" r="2.6"></circle>
+
+          <!-- 6 -->
+          <g transform="translate(567,152)" class="badge-shadow">
+            <circle class="sh-vod" r="26.5" stroke-width="3.3"></circle>
+            <text class="num" y="0">6</text>
+          </g>
+          <text class="lb vod" x="567" y="204">VOD</text>
+          <line class="rule" x1="529" y1="226" x2="605" y2="226"></line>
+          <circle class="rule-dot" cx="567" cy="226" r="2.6"></circle>
+        </svg>
+        <div class="season-pill">시즌 1 <i>1월 – 6월</i></div>
+        <p class="season-cap">라이브 <b>1·2·3월</b> &nbsp;·&nbsp; VOD <b>4·5·6월</b></p>
+      </div>
+
+      <!-- ─── 시즌 2 ─── -->
+      <div class="season-block">
+        <svg class="dg" viewBox="0 22 620 232" role="img" aria-label="시즌 2: 7·8·9월 라이브, 10·11·12월 VOD. 10월 VOD는 7월 라이브 영상, 11월은 8월, 12월은 9월 라이브 영상.">
+          <defs>
+            <marker id="ah2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+              <path d="M0,1 L9,5 L0,9 Z" fill="#c9a765"></path>
+            </marker>
+          </defs>
+
+          <path class="arc" marker-end="url(#ah2)" d="M52,114 C96,40 302,34 357,110"></path>
+          <path class="arc" marker-end="url(#ah2)" d="M155,114 C199,40 405,34 460,110"></path>
+          <path class="arc" marker-end="url(#ah2)" d="M258,114 C302,40 508,34 563,110"></path>
+
+          <!-- 7 -->
+          <g transform="translate(52,152)" class="badge-shadow">
+            <path class="sh-live" transform="scale(1.12)" d="M0,-13 C-7,-26 -24,-26 -29,-13 C-33,-2 -20,8 0,22 C20,8 33,-2 29,-13 C24,-26 7,-26 0,-13 Z"></path>
+            <text class="num" y="-2">7</text>
+          </g>
+          <text class="lb live" x="52" y="204">Live</text>
+          <line class="rule" x1="14" y1="226" x2="90" y2="226"></line>
+          <circle class="rule-dot" cx="52" cy="226" r="2.6"></circle>
+
+          <!-- 8 -->
+          <g transform="translate(155,152)" class="badge-shadow">
+            <path class="sh-live" transform="scale(1.12)" d="M0,-13 C-7,-26 -24,-26 -29,-13 C-33,-2 -20,8 0,22 C20,8 33,-2 29,-13 C24,-26 7,-26 0,-13 Z"></path>
+            <text class="num" y="-2">8</text>
+          </g>
+          <text class="lb live" x="155" y="204">Live</text>
+          <line class="rule" x1="117" y1="226" x2="193" y2="226"></line>
+          <circle class="rule-dot" cx="155" cy="226" r="2.6"></circle>
+
+          <!-- 9 -->
+          <g transform="translate(258,152)" class="badge-shadow">
+            <path class="sh-live" transform="scale(1.12)" d="M0,-13 C-7,-26 -24,-26 -29,-13 C-33,-2 -20,8 0,22 C20,8 33,-2 29,-13 C24,-26 7,-26 0,-13 Z"></path>
+            <text class="num" y="-2">9</text>
+          </g>
+          <text class="lb live" x="258" y="204">Live</text>
+          <line class="rule" x1="220" y1="226" x2="296" y2="226"></line>
+          <circle class="rule-dot" cx="258" cy="226" r="2.6"></circle>
+
+          <!-- 10 : VOD 첫 오픈 -->
+          <g transform="translate(361,152)" class="badge-shadow">
+            <path class="sh-vod" transform="scale(1.12)" d="M0,-27 L7.4,-10.1 L25.7,-8.3 L11.9,3.9 L15.9,21.8 L0,12.5 L-15.9,21.8 L-11.9,3.9 L-25.7,-8.3 L-7.4,-10.1 Z"></path>
+            <text class="num two" y="2">10</text>
+          </g>
+          <text class="lb vod" x="361" y="204">VOD</text>
+          <line class="rule" x1="323" y1="226" x2="399" y2="226"></line>
+          <circle class="rule-dot" cx="361" cy="226" r="2.6"></circle>
+
+          <!-- 11 -->
+          <g transform="translate(464,152)" class="badge-shadow">
+            <circle class="sh-vod" r="26.5" stroke-width="3.3"></circle>
+            <text class="num two" y="0">11</text>
+          </g>
+          <text class="lb vod" x="464" y="204">VOD</text>
+          <line class="rule" x1="426" y1="226" x2="502" y2="226"></line>
+          <circle class="rule-dot" cx="464" cy="226" r="2.6"></circle>
+
+          <!-- 12 -->
+          <g transform="translate(567,152)" class="badge-shadow">
+            <circle class="sh-vod" r="26.5" stroke-width="3.3"></circle>
+            <text class="num two" y="0">12</text>
+          </g>
+          <text class="lb vod" x="567" y="204">VOD</text>
+          <line class="rule" x1="529" y1="226" x2="605" y2="226"></line>
+          <circle class="rule-dot" cx="567" cy="226" r="2.6"></circle>
+        </svg>
+        <div class="season-pill">시즌 2 <i>7월 – 12월</i></div>
+        <p class="season-cap">라이브 <b>7·8·9월</b> &nbsp;·&nbsp; VOD <b>10·11·12월</b></p>
+      </div>
+
+      <!-- ─── 1년 ─── -->
+      <div class="year-wrap">
+        <svg class="dg" viewBox="0 0 620 96" role="img" aria-label="시즌 1과 시즌 2가 모여 1년이 됩니다.">
+          <line class="rule" style="stroke:#c9a765;stroke-width:2.4" x1="30" y1="48" x2="246" y2="48"></line>
+          <path d="M12,48 L30,41.5 L30,54.5 Z" fill="#c9a765"></path>
+          <path d="M138,41 L145,48 L138,55 L131,48 Z" fill="#c9a765"></path>
+          <line class="rule" style="stroke:#c9a765;stroke-width:2.4" x1="374" y1="48" x2="590" y2="48"></line>
+          <path d="M608,48 L590,41.5 L590,54.5 Z" fill="#c9a765"></path>
+          <path d="M482,41 L489,48 L482,55 L475,48 Z" fill="#c9a765"></path>
+          <circle cx="310" cy="48" r="37" fill="#fdfaf3" stroke="#bd9440" stroke-width="2.4"></circle>
+          <circle cx="310" cy="48" r="30.5" fill="none" stroke="#e2c68a" stroke-width="1"></circle>
+          <text class="yr" x="310" y="49">1년</text>
+        </svg>
+      </div>
+
+      <p class="map-note">시즌 1의 라이브(1·2·3월)는 4·5·6월에 VOD로,<br>시즌 2의 라이브(7·8·9월)는 10·11·12월에 VOD로 열립니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 공지사항 ═══════════ -->
+<section class="notice">
+  <div class="wrap">
+    <div class="sec-label">NOTICE</div>
+    <h2 class="sec-title">공지사항</h2>
+    <p class="sec-sub">수강 전에 꼭 한 번 읽어주세요.</p>
+
+    <!-- 01 -->
+    <div class="n-card">
+      <span class="no">01</span>
+      <h3>1년은 두 개의 시즌으로 나뉩니다</h3>
+      <div class="split">
+        <div>
+          <h4>시즌 1</h4>
+          <div class="rng">1월 – 6월</div>
+          <div class="row"><span class="k live">라이브</span><span class="v">1월 · 2월 · 3월</span></div>
+          <div class="row"><span class="k vod">VOD</span><span class="v">4월 · 5월 · 6월</span></div>
+        </div>
+        <div>
+          <h4>시즌 2</h4>
+          <div class="rng">7월 – 12월</div>
+          <div class="row"><span class="k live">라이브</span><span class="v">7월 · 8월 · 9월</span></div>
+          <div class="row"><span class="k vod">VOD</span><span class="v">10월 · 11월 · 12월</span></div>
+        </div>
+      </div>
+      <p style="margin-top:14px">각 시즌은 <b>라이브 3개월 + VOD 3개월</b>로 구성됩니다. 앞의 3개월은 실시간 라이브 수업으로, 뒤의 3개월은 그 라이브 영상을 이어받은 VOD반으로 운영됩니다.</p>
+    </div>
+
+    <!-- 02 -->
+    <div class="n-card">
+      <span class="no">02</span>
+      <h3>VOD는 어떤 영상으로 진행되나요?</h3>
+      <p>VOD반은 같은 시즌의 라이브 수업 영상을 그대로 이어받습니다. 라이브를 놓쳤더라도 <b>같은 커리큘럼, 같은 수업</b>을 그대로 들으실 수 있습니다.</p>
+      <table class="vtable">
+        <thead>
+          <tr><th scope="col">VOD 개강월</th><th scope="col"></th><th scope="col">진행 영상</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">4월 VOD</th><td class="arrowcell">→</td><td>1월 라이브 영상</td></tr>
+          <tr><th scope="row">5월 VOD</th><td class="arrowcell">→</td><td>2월 라이브 영상</td></tr>
+          <tr><th scope="row">6월 VOD</th><td class="arrowcell">→</td><td>3월 라이브 영상</td></tr>
+          <tr class="s2"><th scope="row">10월 VOD</th><td class="arrowcell">→</td><td>7월 라이브 영상</td></tr>
+          <tr class="s2"><th scope="row">11월 VOD</th><td class="arrowcell">→</td><td>8월 라이브 영상</td></tr>
+          <tr class="s2"><th scope="row">12월 VOD</th><td class="arrowcell">→</td><td>9월 라이브 영상</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 03 -->
+    <div class="n-card">
+      <span class="no">03</span>
+      <h3>이미 들은 수업은<br>다시 듣지 않게 배정합니다</h3>
+      <p>VOD가 라이브 영상을 이어받기 때문에, 예전에 라이브로 들었던 달과 겹칠 수 있습니다. 그런 경우에는 <b>겹치지 않는 다른 달의 수업</b>으로 배정해 드립니다.</p>
+      <div class="example">
+        <div class="ttl">EXAMPLE</div>
+        <p>11월 VOD는 <b>8월 라이브 영상</b>입니다.<br>
+        8월에 이미 라이브로 수강하신 분이 11월에 돌아오셨다면, 같은 8월 영상을 그대로 드리지 않고 <b>다른 달 수업</b>을 배정해 드립니다.</p>
+      </div>
+      <ul style="margin-top:14px">
+        <li>배정할 때 <b>짝수달 · 홀수달 구분은 그대로 유지</b>합니다.</li>
+        <li>배우는 <b>내용과 커리큘럼은 동일</b>하고, 듣는 ‘월’만 달라집니다.</li>
+        <li>진도는 함께 갑니다. <b>10월 VOD를 듣는 분은 10월 수강생과 같은 진도</b>로 진행됩니다.</li>
+        <li>7월 라이브를 이미 들으셨다면, 같은 수업을 다시 듣지 않도록 다른 달 수업을 드립니다.</li>
+      </ul>
+      <div class="callout">
+        ✦ 예전 수강 이력이 있으시면 <b>말씀만 주세요.</b> 바로 겹치지 않는 달로 변경해 드립니다.
+      </div>
+    </div>
+
+    <!-- 04 -->
+    <div class="n-card">
+      <span class="no">04</span>
+      <h3>1년에 딱 두 번,<br>수강료 할인이 있습니다</h3>
+      <p>유핏토익은 상시 수강료 할인 이벤트를 하지 않습니다. <b>1년에 딱 두 번</b>, VOD가 처음 열리는 달에만 진행됩니다.</p>
+      <div class="d-grid" style="margin-top:16px">
+        <div class="d-card top">
+          <span class="tag">가장 저렴한 달 ✦</span>
+          <div class="mth">4월 · 10월</div>
+          <div class="rate">5% + 5% <small>할인</small></div>
+          <p class="why">VOD 기본 5%에 <b>추가 5%</b>가 더 들어갑니다. 시즌 1의 VOD가 처음 오픈하는 달이 <b>4월</b>, 시즌 2가 <b>10월</b>이라서 1년 중 수강료가 가장 저렴합니다.</p>
+        </div>
+        <div class="d-card">
+          <div class="mth">5 · 6 · 11 · 12월</div>
+          <div class="rate">5% <small>할인</small></div>
+          <p class="why">VOD반은 기본적으로 수강료 5% 할인이 적용됩니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 05 -->
+    <div class="n-card">
+      <span class="no">05</span>
+      <h3>연속 수강하면<br>수강료가 오르지 않습니다</h3>
+      <p>유핏토익에 한번 오신 분의 수강료가 <b>더 오르는 일은 원하지 않습니다.</b> 그래서 4월(또는 10월) VOD에서 받은 혜택은 연속 수강하는 동안 계속 이어집니다.</p>
+      <div class="chain">
+        <div class="link">
+          <div class="m">4월</div>
+          <div class="t">VOD 첫 오픈</div>
+          <div class="p">5%+5%</div>
+        </div>
+        <div class="link">
+          <div class="m">5월</div>
+          <div class="t">연속 수강</div>
+          <div class="p">+5%</div>
+        </div>
+        <div class="link">
+          <div class="m">6월</div>
+          <div class="t">연속 수강</div>
+          <div class="p">+5%</div>
+        </div>
+        <div class="link keep">
+          <div class="m">7월</div>
+          <div class="t">라이브 전환</div>
+          <div class="p">5% 유지</div>
+        </div>
+      </div>
+      <p style="margin-top:14px">4월 VOD에서 추가 5%를 받고 연속 수강을 이어가면, 5월 · 6월에 혜택이 더 붙고 <b>7월 라이브로 넘어가도 그대로 유지</b>됩니다. 즉, <span class="hl">이후에 수강료가 더 오를 일은 없습니다.</span></p>
+      <p>시즌 2도 <b>10월</b>을 시작점으로 같은 방식으로 이어집니다.</p>
+    </div>
+
+    <!-- 06 -->
+    <div class="n-card warn">
+      <span class="no">06</span>
+      <h3>이 구성은 ‘계획’입니다</h3>
+      <p>위 일정은 현재 확정된 운영 계획이며, 상황에 따라 달라질 수 있습니다. 다만 아래 원칙은 지켜집니다.</p>
+      <div class="fixed-live">
+        <span>1월 라이브</span>
+        <span>2월 라이브</span>
+        <span>7월 라이브</span>
+        <span>8월 라이브</span>
+      </div>
+      <p style="margin-top:10px"><b>1월 · 2월 · 7월 · 8월</b>은 무조건 라이브로 진행됩니다.</p>
+      <div class="fixed-live" style="margin-top:14px">
+        <span class="maybe">3월 · 9월 — 변동 가능</span>
+      </div>
+      <p style="margin-top:10px"><b>3월과 9월</b>은 대형 프로젝트 진행 여부에 따라 VOD로 운영될 수 있습니다. 변경 사항이 생기면 미리 공지해 드립니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CLOSE ═══════════ -->
+<section class="close">
+  <div class="wrap">
+    <div class="orn"><span>✦</span></div>
+    <h2>어느 달에 시작해도<br><em class="grad-text" style="font-style:normal">이어서 갈 수 있습니다</em></h2>
+    <p>겹치는 수업은 바꿔드리고,<br>한번 받은 혜택은 내려가지 않습니다.<br>궁금한 점은 언제든 문의해 주세요.</p>
+  </div>
+</section>
+
+<footer>YOUFIT TOEIC</footer>
+
+</body>
+</html>
