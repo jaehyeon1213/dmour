@@ -513,6 +513,28 @@
     color: #a2929f;
   }
 
+  /* ---------- A4 export mode ----------
+     Applied by make-a4.mjs (body.a4) when rendering the page to
+     A4 sheets. Tightens vertical rhythm so each sheet fills out,
+     and turns the hero into a full-page cover. */
+  body.a4 .hero {
+    min-height: 1169.33px;
+    padding: 0 0 100px;   /* optical centring: sit just above the middle */
+    display: flex;
+    align-items: center;
+  }
+  body.a4 .hero > .wrap { width: 100%; }
+  body.a4 section { padding: 34px 0; }
+  body.a4 .sec-sub { margin-bottom: 20px; }
+  body.a4 .frame { padding: 22px 18px 18px; }
+  body.a4 .legend { margin-bottom: 18px; }
+  body.a4 .season-block + .season-block { margin-top: 22px; padding-top: 18px; }
+  body.a4 .year-wrap { margin-top: 18px; }
+  body.a4 .map-note { margin-top: 14px; }
+  body.a4 .close { padding: 32px 0 20px; }
+  body.a4 footer { padding: 18px 0 22px; }
+  body.a4 .n-card, body.a4 .frame, body.a4 .d-card { break-inside: avoid; }
+
   @media (max-width: 420px) {
     .wrap { padding: 0 18px; }
     .hero h1 { font-size: 23.5px; }
