@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>유핏토익 표지 배경</title>
+<style>
+  :root { --night: #150a2c; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0d0618; }
+
+  /* Same page geometry as the guide: 827 CSS px = 210mm */
+  .sheet {
+    position: relative;
+    max-width: 827px;
+    height: 1169.33px;
+    margin: 0 auto;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse 72% 44% at 16% 4%,    rgba(139,92,246,.62), transparent 62%),
+      radial-gradient(ellipse 56% 38% at 92% 26%,   rgba(217,70,239,.40), transparent 62%),
+      radial-gradient(ellipse 100% 42% at 50% 104%, rgba(124,58,237,.45), transparent 66%),
+      var(--night);
+  }
+
+  /* decorative ring, top-right */
+  .sheet.ring::after {
+    content: "";
+    position: absolute;
+    top: -190px; right: -170px;
+    width: 560px; height: 560px;
+    border-radius: 50%;
+    border: 1px solid rgba(196,178,253,.16);
+    box-shadow: inset 0 0 0 60px rgba(196,178,253,.05);
+    pointer-events: none;
+  }
+
+  @media (max-width: 860px) {
+    .sheet { height: auto; aspect-ratio: 210 / 297; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 01 · with the decorative ring (as used on the guide cover) -->
+<section class="sheet ring"></section>
+
+<!-- 02 · gradient only -->
+<section class="sheet"></section>
+
+</body>
+</html>
